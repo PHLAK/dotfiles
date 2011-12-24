@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if [ ! -x $HOME/bin ]; then
+    mkdir -p $HOME/bin
+fi
