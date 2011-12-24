@@ -22,12 +22,16 @@ mkdir -p ${script_path}/backups/${now}/
 
 for file in "${dotfiles[@]}"
 do
-    mv -r ~/$file ${script_path}/backups/${now}/
+    if [ ! -h ~/${file} ]; then
+        mv ~/$file ${script_path}/backups/${now}/
+    fi
 done
     
 # Symlink all of the things
 for file in "${dotfiles[@]}"
 do
-    ln -s ${script_path}/${file} ~/${file}
+    if [ ! -e ~/${file} ]; then
+        ln -s ${script_path}/${file} ~/${file}
+    fi
 done
 
