@@ -1,8 +1,8 @@
 # === EDIT FILE LOCATIONS BELOW ===
 
 # Your todo.txt directory
-#export TODO_DIR="/Users/gina/Documents/todo"
-export TODO_DIR=`dirname "$0"`
+export TODO_DIR="/home/chris/Dropbox/todo"
+#export TODO_DIR=`dirname "$0"`
 
 # Your todo/done/report.txt locations
 export TODO_FILE="$TODO_DIR/todo.txt"
@@ -78,3 +78,5 @@ export TMP_FILE="$TODO_DIR/todo.tmp"
 # just before the list output is displayed.
 #
 # export TODOTXT_FINAL_FILTER='cat'
+
+export TODOTXT_DEFAULT_ACTION=ls
