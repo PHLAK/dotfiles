@@ -2,12 +2,10 @@
 export GIT_PS1_SHOWDIRTYSTATE=1
 export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w\[\033[01;33m\]$(__git_ps1)\[\033[01;34m\] \$\[\033[00m\] '
 
-# Add ~/bin to the PATH variable
-PATH=$PATH:$HOME/bin
+# Add ~/bin and Android SDK tools to the PATH variable
+PATH=${PATH}:$HOME/bin
+PATH=${PATH}:~/.sdk/tools:~/.sdk/platform-tools
 export PATH
-
-# Android SDK Tools
-export PATH=${PATH}:~/.sdk/tools:~/.sdk/platform-tools
 
 # Share bash command history with all open terminals
 PROMPT_COMMAND="history -a; history -n"
