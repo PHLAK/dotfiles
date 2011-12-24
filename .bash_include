@@ -1,6 +1,6 @@
 # Set up todo.txt
 source ${HOME}/.todo/todo_completion
-complete -F _todo td
+complete -F _todo todo
 
 # Git custom prompt
 export GIT_PS1_SHOWDIRTYSTATE=1
