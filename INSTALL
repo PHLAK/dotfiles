@@ -1,5 +1,33 @@
 #!/bin/bash
 
-if [ ! -x $HOME/bin ]; then
+# Array of dot files
+dotfiles[1]=".ssh/config"
+dotfiles[2]=".todo"
+dotfiles[3]=".bash_aliases"
+dotfiles[4]=".bashrc"
+dotfiles[5]=".gitconfig"
+dotfiles[6]=".gitignore"
+
+# Set some variables
+script_path=$(dirname $(readlink -f $0))
+now=$(date +%F_%T)
+
+# Create ~/bin if it doesn't exist
+if [ ! -d $HOME/bin ]; then
     mkdir -p $HOME/bin
 fi
+
+# Backup all of the things
+mkdir -p ${script_path}/backups/${now}/
+
+for file in "${dotfiles[@]}"
+do
+    mv -r ~/$file ${script_path}/backups/${now}/
+done
+    
+# Symlink all of the things
+for file in "${dotfiles[@]}"
+do
+    ln -s ${script_path}/${file} ~/${file}
+done
+
