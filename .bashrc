@@ -2,10 +2,6 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-# ------------------------------------------------------------------------------
-# Customize the way terminal history works
-# ------------------------------------------------------------------------------
-
 # Don't allow duplicate lines in the history
 HISTCONTROL=ignoredups:ignorespace
 
@@ -35,18 +31,9 @@ case "$TERM" in
     xterm-color) color_prompt=yes;;
 esac
 
-# Enable a fancy colored prompt
-
-PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
+# Git custom prompt
+export GIT_PS1_SHOWDIRTYSTATE=1
+export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w\[\033[01;33m\]$(__git_ps1)\[\033[01;34m\] \$\[\033[00m\] '
 
 # Include custom bash aliases
 if [ -f ~/.bash_aliases ]; then
@@ -62,12 +49,7 @@ fi
 source ${HOME}/.todo/todo_completion
 complete -F _todo todo
 
-# Git custom prompt
-export GIT_PS1_SHOWDIRTYSTATE=1
-export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w\[\033[01;33m\]$(__git_ps1)\[\033[01;34m\] \$\[\033[00m\] '
-
 # Add ~/bin and Android SDK tools to the PATH variable
 PATH=${PATH}:$HOME/bin
 PATH=${PATH}:~/.sdk/tools:~/.sdk/platform-tools
 export PATH
-
