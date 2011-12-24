@@ -26,7 +26,7 @@ do
         mv ~/$file ${script_path}/backups/${now}/
     fi
 done
-    
+
 # Symlink all of the things
 for file in "${dotfiles[@]}"
 do
