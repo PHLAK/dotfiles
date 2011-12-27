@@ -39,6 +39,6 @@ if [ ! -e ~/bin/t ]; then
     ln -s ~/.todo/todo.sh ~/bin/t
 fi
 
-if [ ! -e !/bin/soxy; then
+if [ ! -e ~/bin/soxy ]; then
     ln -s ~/.scripts/soxy ~/bin/soxy
 fi
