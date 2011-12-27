@@ -1,4 +1,3 @@
-
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -49,7 +48,6 @@ fi
 source ${HOME}/.todo/todo_completion
 complete -F _todo todo
 
-# Add ~/bin and Android SDK tools to the PATH variable
-PATH=${PATH}:$HOME/bin
+# Add Android SDK tools to the PATH variable
 PATH=${PATH}:~/.sdk/tools:~/.sdk/platform-tools
 export PATH
