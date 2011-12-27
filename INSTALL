@@ -40,5 +40,5 @@ if [ ! -e ~/bin/t ]; then
 fi
 
 if [ ! -e ~/bin/soxy ]; then
-    ln -s ~/.scripts/soxy ~/bin/soxy
+    ln -s ~/.scripts/soxy/soxy ~/bin/soxy
 fi
