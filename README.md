@@ -11,4 +11,5 @@ Clone the project to your home folder
 
 Run the INSTALL script
 
-    sh ~/.dotfiles/INSTALL
+    cd ~/.dotfiles/
+    ./INSTALL
