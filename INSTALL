@@ -6,36 +6,39 @@ dotfiles[2]=".bash_aliases"
 dotfiles[3]=".gitconfig"
 dotfiles[4]=".gitignore"
 dotfiles[5]=".todo"
-dotfiles[6]=".ssh/config"
+dotfiles[6]=".scripts"
+dotfiles[7]=".ssh/config"
 
 # Set some variables
 script_path=$(dirname $(readlink -f $0))
 now=$(date +%F_%T)
+
+# Backup all of the things
+mkdir -p $script_path/backups/$now/
+
+for file in "${dotfiles[@]}"
+do
+    mv ~/$file $script_path/backups/$now/
+done
+
+# Symlink all of the things
+for file in "${dotfiles[@]}"
+do
+    if [ ! -e ~/$file ]; then
+        ln -s $script_path/$file ~/$file
+    fi
+done
 
 # Create ~/bin if it doesn't exist
 if [ ! -d ~/bin ]; then
     mkdir -p ~/bin
 fi
 
-# Backup all of the things
-mkdir -p ${script_path}/backups/${now}/
-
-for file in "${dotfiles[@]}"
-do
-    if [ ! -h ~/${file} ]; then
-        mv ~/$file ${script_path}/backups/${now}/
-    fi
-done
-
-# Symlink all of the things
-for file in "${dotfiles[@]}"
-do
-    if [ ! -e ~/${file} ]; then
-        ln -s ${script_path}/${file} ~/${file}
-    fi
-done
-
+# Create symlinks to ~/bin/
 if [ ! -e ~/bin/t ]; then
     ln -s ~/.todo/todo.sh ~/bin/t
 fi
 
+if [ ! -e !/bin/soxy; then
+    ln -s ~/.scripts/soxy ~/bin/soxy
+fi
