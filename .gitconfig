@@ -8,4 +8,4 @@
     ui = auto
 [core]
     autocrlf = input
-    excludesfile = ~/.gitignore
+    excludesfile = ~/.gitignore_global
