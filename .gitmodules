@@ -1,0 +1,3 @@
+[submodule ".scripts/soxy"]
+	path = .scripts/soxy
+	url = git://github.com/PHLAK/Soxy.git
