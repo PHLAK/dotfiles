@@ -5,11 +5,8 @@ Created by, [Chris Kankiewicz](http://www.ChrisKankiewicz.com)
 Installation
 ------------
 
-Clone the project to your home folder
+Clone the project to your home folder and run the INSTALL script
 
-    git clone git://github.com/PHLAK/dotfiles.git ~/.dotfiles
-
-Run the INSTALL script
-
-    cd ~/.dotfiles/
+    git clone git://github.com/PHLAK/dotfiles.git ~/.userconfig
+    cd ~/.userconfig
     ./INSTALL
