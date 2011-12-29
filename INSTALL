@@ -17,7 +17,9 @@ mkdir -p $script_path/backups/$now/
 
 for file in "${dotfiles[@]}"
 do
-    mv ~/$file $script_path/backups/$now/
+    if [ -e $file ]; then
+        mv ~/$file $script_path/backups/$now/
+    fi
 done
 
 # Symlink all of the things
