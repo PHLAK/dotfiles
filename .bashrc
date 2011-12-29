@@ -44,22 +44,6 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# todo.txt setup
-source ${HOME}/.todo/todo_completion
-complete -F _todo todo
-
-# todo.txt directory
-export TODO_DIR="$HOME/Dropbox/todo"
-
-# todo.txt todo/done/report.txt locations
-export TODO_FILE="$TODO_DIR/todo.txt"
-export DONE_FILE="$TODO_DIR/done.txt"
-export REPORT_FILE="$TODO_DIR/report.txt"
-export TMP_FILE="$TODO_DIR/todo.tmp"
-
-# todo.txt miscellaneous configuration
-export TODOTXT_DEFAULT_ACTION=ls
-
 # Add Android SDK tools to the PATH variable
 PATH=${PATH}:~/.sdk/tools:~/.sdk/platform-tools
 export PATH
