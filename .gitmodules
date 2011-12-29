@@ -1,3 +1,6 @@
 [submodule ".scripts/soxy"]
 	path = .scripts/soxy
 	url = git://github.com/PHLAK/Soxy.git
+[submodule ".todo"]
+	path = .todo
+	url = git://github.com/ginatrapani/todo.txt-cli.git
