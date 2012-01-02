@@ -17,7 +17,7 @@ mkdir -p $script_path/backups/$now/
 
 for file in "${dotfiles[@]}"
 do
-    if [ -e $file ]; then
+    if [ -e ~/$file ]; then
         mv ~/$file $script_path/backups/$now/
     fi
 done
