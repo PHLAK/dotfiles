@@ -8,7 +8,5 @@ Installation
 Clone the project to your home folder and run the INSTALL script
 
     git clone --recursive git://github.com/PHLAK/dotfiles.git ~/.userconfig
-
     cd ~/.userconfig
-
     ./INSTALL
