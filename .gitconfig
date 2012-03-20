@@ -10,4 +10,4 @@
     autocrlf = input
     excludesfile = ~/.gitignore_global
 [push]
-	default = upstream
+    default = upstream
