@@ -45,5 +45,5 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # Add Android SDK tools to the PATH variable
-PATH=${PATH}:~/.sdk/tools:~/.sdk/platform-tools
+PATH=${PATH}:~/bin:~/.sdk/tools:~/.sdk/platform-tools
 export PATH
