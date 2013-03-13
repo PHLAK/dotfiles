@@ -4,6 +4,7 @@
 .project
 .settings/
 
+
 ## PACKAGES
 ########################################
 # It's better to unpack these files and 
@@ -19,6 +20,7 @@
 *.tar
 *.zip
 
+
 ## LOGS AND DATABASES
 ########################################
 *.db
@@ -26,12 +28,14 @@
 *.sql
 *.sqlite
 
-## OS GENERATEDFILES
+
+## OS GENERATED FILES
 ########################################
 .DS_Store*
 ehthumbs.db
 Icon?
 Thumbs.db
+
 
 ## FILES TO NEVER EXCLUDE
 ########################################
