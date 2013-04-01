@@ -8,6 +8,7 @@
     ui = auto
 [core]
     autocrlf = input
+    editor = nano
     excludesfile = ~/.gitignore_global
 [push]
     default = upstream
