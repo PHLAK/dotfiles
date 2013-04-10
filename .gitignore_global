@@ -3,6 +3,8 @@
 .buildpath
 .project
 .settings/
+.sublime-project
+.sublime-workspace
 
 
 ## PACKAGES
