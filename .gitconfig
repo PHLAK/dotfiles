@@ -10,6 +10,7 @@
     autocrlf = input
     editor = nano
     excludesfile = ~/.gitignore_global
+    filemode = false
 [push]
     default = upstream
 [remote "origin"]
