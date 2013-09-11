@@ -1,6 +1,6 @@
-dotfiles - Custom Linux configuration files
-===========================================
-Created by, [Chris Kankiewicz](http://www.ChrisKankiewicz.com)
+dotfiles
+========
+Custom Linux configuration files by, [Chris Kankiewicz](http://www.ChrisKankiewicz.com)
 
 Installation
 ------------
