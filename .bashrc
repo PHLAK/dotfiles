@@ -2,14 +2,14 @@
 [ -z "$PS1" ] && return
 
 # Don't allow duplicate lines in the history
-HISTCONTROL=ignoredups:ignorespace
+HISTCONTROL=ignoreboth
 
 # Append to the history file, don't overwrite it
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1024
-HISTFILESIZE=4096
+HISTSIZE=2048
+HISTFILESIZE=8192
 
 # Share bash command history with all open terminals
 PROMPT_COMMAND="history -a; history -n"
@@ -21,14 +21,9 @@ shopt -s checkwinsize
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # Set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
+if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
-
-# Set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-    xterm-color) color_prompt=yes;;
-esac
 
 # Git custom prompt
 export GIT_PS1_SHOWDIRTYSTATE=1
@@ -40,10 +35,14 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # Include programmable completion features
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
+  fi
 fi
 
-# Add Android SDK tools to the PATH variable
+# Add ~/bin to the PATH variable
 PATH=${PATH}:~/bin
 export PATH
