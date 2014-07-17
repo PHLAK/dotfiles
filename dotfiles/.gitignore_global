@@ -35,6 +35,10 @@ ehthumbs.db
 Icon?
 Thumbs.db
 
+## VAGRANT
+########################################
+.vagrant
+
 ## FILES TO NEVER EXCLUDE
 ########################################
 !.gitigore
