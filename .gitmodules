@@ -1,6 +1,6 @@
-[submodule ".scripts/soxy"]
-	path = .scripts/soxy
-	url = git://github.com/PHLAK/Soxy.git
 [submodule "dotfiles/.scripts/soxy"]
 	path = dotfiles/.scripts/soxy
 	url = https://github.com/PHLAK/Soxy.git
+[submodule "dotfiles/.scripts/livestreamer-completion"]
+	path = dotfiles/.scripts/livestreamer-completion
+	url = https://github.com/chrippa/livestreamer-completion.git
