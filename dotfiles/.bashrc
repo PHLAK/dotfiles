@@ -29,6 +29,11 @@ fi
 export GIT_PS1_SHOWDIRTYSTATE=1
 export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w\[\033[01;33m\]$(__git_ps1)\[\033[01;34m\] \$\[\033[00m\] '
 
+# Include custom bash functions
+if [[ -f ~/.bash_functions ]]; then
+    . ~/.bash_functions
+fi
+
 # Include custom bash aliases
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
