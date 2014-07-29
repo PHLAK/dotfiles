@@ -1,40 +1,40 @@
-# If not running interactively, don't do anything
+## If not running interactively, don't do anything
 [[ -z "$PS1" ]] && return
 
-# Don't allow duplicate lines in the history
+## Don't allow duplicate lines in the history
 HISTCONTROL=ignoreboth
 
-# Append to the history file, don't overwrite it
+## Append to the history file, don't overwrite it
 shopt -s histappend
 
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+## for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=2048
 HISTFILESIZE=8192
 
-# Share bash command history with all open terminals
+## Share bash command history with all open terminals
 PROMPT_COMMAND="history -a; history -n"
 
-# Update the values of LINES and COLUMNS after each command if windows size changes
+## Update the values of LINES and COLUMNS after each command if windows size changes
 shopt -s checkwinsize
 
-# Make less more friendly for non-text input files, see lesspipe(1)
+## Make less more friendly for non-text input files, see lesspipe(1)
 [[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
 
 ## Git custom prompt
 export GIT_PS1_SHOWDIRTYSTATE=1
 export PS1='\[\033[01;32m\]\u\[\033[01;30m\]@\[\033[01;35m\]\h\[\033[01;34m\] \w\[\033[01;33m\]$(__git_ps1)\[\033[01;34m\] \$\[\033[00m\] '
 
-# Include custom bash functions
+## Include custom bash functions
 if [[ -f ~/.bash_functions ]]; then
     . ~/.bash_functions
 fi
 
-# Include custom bash aliases
+## Include custom bash aliases
 if [[ -f ~/.bash_aliases ]]; then
     . ~/.bash_aliases
 fi
 
-# Include programmable completion features
+## Include programmable completion features
 if ! shopt -oq posix; then
     if [[ -f /usr/share/bash-completion/bash_completion ]]; then
         . /usr/share/bash-completion/bash_completion
@@ -43,5 +43,5 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Add ~/bin to the PATH variable
+## Add ~/bin to the PATH variable
 export PATH=${PATH}:~/bin
