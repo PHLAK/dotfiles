@@ -22,7 +22,7 @@ shopt -s checkwinsize
 
 ## Git custom prompt
 export GIT_PS1_SHOWDIRTYSTATE=1
-export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w\[\033[01;33m\]$(__git_ps1)\[\033[01;34m\] \$\[\033[00m\] '
+export PS1='\[\033[01;32m\]\u\[\033[01;30m\]@\[\033[01;35m\]\h\[\033[01;34m\] \w\[\033[01;33m\]$(__git_ps1)\[\033[01;34m\] \$\[\033[00m\] '
 
 # Include custom bash functions
 if [[ -f ~/.bash_functions ]]; then
