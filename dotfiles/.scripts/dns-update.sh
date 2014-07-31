@@ -1,9 +1,16 @@
 #!/bin/bash
 
-################################################################################
-# This script requires the Linode CLI tools to be installed and configured to
-# function correctly.  Get the Linode CLI here: https://github.com/linode/cli
-################################################################################
+## Require Linode CLI
+if [[ ! $(test -x /usr/bin/linode) ]]; then
+
+    echo "################################################################################"
+    echo "# This script requires the Linode CLI tools to be installed and configured to   "
+    echo "# function correctly.  Get the Linode CLI here: https://github.com/linode/cli   "
+    echo "################################################################################"
+
+    exit 1
+
+fi
 
 ## Split hostname into array
 IFS='.' read -a host <<< "$1"
