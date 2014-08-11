@@ -34,6 +34,11 @@ if [[ -f ~/.bash_aliases ]]; then
     . ~/.bash_aliases
 fi
 
+## Include local bash config
+if [[ -f ~/.bash_local ]]; then
+    . ~/.bash_local
+fi
+
 ## Include programmable completion features
 if ! shopt -oq posix; then
     if [[ -f /usr/share/bash-completion/bash_completion ]]; then
