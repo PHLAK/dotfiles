@@ -31,7 +31,7 @@ fi
 export GIT_PS1_SHOWDIRTYSTATE=1
 
 ## Set custom bash prompt
-export PS1='\[\033[01;30m\]$(date +%T) \[\033[01;32m\]\u\[\033[01;30m\]@\[\033[01;$HOST_COLOR\]\h\[\033[01;35m\] \w\[\033[01;33m\]$(__git_ps1)\[\033[01;30m\] \$\[\033[00m\] '
+export PS1='\[\033[01;32m\]\u\[\033[01;30m\]@\[\033[01;$HOST_COLOR\]\h\[\033[01;35m\] \w\[\033[01;33m\]$(__git_ps1)\[\033[01;30m\] \$\[\033[00m\] '
 
 ## Include custom bash functions
 if [[ -f ~/.bash_functions ]]; then
