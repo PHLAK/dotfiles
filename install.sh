@@ -21,7 +21,7 @@ for file in ${dotfiles}; do
 
     ## Backup existing files
     if [[ -e "${live_path}" ]]; then
-        if [[ ! -h "${live_path}" ]]
+        if [[ ! -h "${live_path}" ]]; then
             mv ${live_path} ${script_path}/backups/${file}.${now}.bak
         fi
     fi
