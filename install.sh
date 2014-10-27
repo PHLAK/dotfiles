@@ -1,37 +1,44 @@
 #!/bin/bash
 
-## Array of dot files
-dotfiles=$(ls -A dotfiles)
-
 ## Get the script's path
-script_path=$(dirname $(readlink -f $0))
+script_path="$(dirname $(readlink -f ${0}))"
+
+## Array of dot files
+dotfiles=$(ls -A ${script_path}/dotfiles)
 
 ## Get current date/time
-now=$(date +%F_%T)
+now="$(date +%F_%T)"
 
-## Create the backup dir
-mkdir -p $script_path/backups/$now/
+## Create the backup dir if non-existent
+if [[ ! -d "${script_path}/backups" ]]; then
+    mkdir -p ${script_path}/backups
+fi
 
-## Backup all of the things
-for file in $dotfiles; do
-    if [[ -e ~/$file ]]; then
-        mv ~/$file $script_path/backups/$now/
+for file in ${dotfiles}; do
+
+    ## Set live file path
+    live_path="${HOME}/${file}"
+
+    ## Backup existing files
+    if [[ -e "${live_path}" ]]; then
+        if [[ ! -h "${live_path}" ]]
+            mv ${live_path} ${script_path}/backups/${file}.${now}.bak
+        fi
     fi
-done
 
-## Symlink all of the things
-for file in $dotfiles; do
-    if [[ ! -e ~/$file ]]; then
-        ln -s $script_path/dotfiles/$file ~/$file
+    ##
+    if [[ ! -h "${live_path}" ]]; then
+        ln -s ${script_path}/dotfiles/${file} ${live_path}
     fi
+
 done
 
 ## Create ~/bin if it doesn't exist
-if [[ ! -d ~/bin ]]; then
-    mkdir -p ~/bin
+if [[ ! -d "${HOME}/bin" ]]; then
+    mkdir -p "${HOME}/bin"
 fi
 
 ## Create symlinks to ~/bin/
-if [[ ! -e ~/bin/soxy ]]; then
-    ln -s ~/.scripts/soxy/soxy ~/bin/soxy
+if [[ ! -e "${HOME}/bin/soxy" ]]; then
+    ln -s ${HOME}/.scripts/soxy/soxy ${HOME}/bin/soxy
 fi
