@@ -1,3 +1,3 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-find $HOME/Downloads -maxdepth 1 -mtime +14 -type f -delete
+find ${HOME}/Downloads -maxdepth 1 -mtime +14 -type f -delete

@@ -16,5 +16,5 @@ clients="ceilometer cinder glance heat keystone neutron nova swift trove"
 
 ## Install all the things
 for client in $clients; do
-    pip install python-${client}client
+    pip install --upgrade python-${client}client
 done
