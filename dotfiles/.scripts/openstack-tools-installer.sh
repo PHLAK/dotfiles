@@ -13,7 +13,7 @@ fi
 ## Define Open Stack clients
 clients=(
     "python-ceilometerclient"
-    "python-cinderclient"
+    "python-cinderclient==1.0.9"
     "python-glanceclient==0.13.1"
     "python-heatclient"
     "python-keystoneclient"
