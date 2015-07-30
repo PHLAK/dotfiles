@@ -11,3 +11,4 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 alias upaste='pastebinit -b http://paste.ubuntu.com'
+alias termbin='nc termbin.com 9999'
