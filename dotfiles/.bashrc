@@ -56,6 +56,3 @@ if ! shopt -oq posix; then
         . /etc/bash_completion
   fi
 fi
-
-## Add ~/bin to the PATH variable
-export PATH=${PATH}:~/bin
