@@ -38,7 +38,16 @@ if [[ ! -d "${HOME}/bin" ]]; then
     mkdir -p "${HOME}/bin"
 fi
 
-## Create symlinks to ~/bin/
+## Create symlink to soxy bin
 if [[ ! -e "${HOME}/bin/soxy" ]]; then
-    ln -s ${HOME}/.scripts/soxy/soxy ${HOME}/bin/soxy
+    if [[ -e "${HOME}/.scripts/soxy/soxy" ]]; then
+        ln -s ${HOME}/.scripts/soxy/soxy ${HOME}/bin/soxy
+    fi
+fi
+
+## Create symlink to git-stree bin
+if [[ ! -e "${HOME}/bin/git-stree" ]]; then
+    if [[ -e "${HOME}/.scripts/git-stree/git-stree"]]; then
+        ln -s ${HOME}/.scripts/git-stree/git-stree ${HOME}/bin/git-stree
+    fi
 fi
