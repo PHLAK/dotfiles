@@ -4,6 +4,3 @@
 [submodule "dotfiles/.scripts/livestreamer-completion"]
 	path = dotfiles/.scripts/livestreamer-completion
 	url = https://github.com/chrippa/livestreamer-completion.git
-[submodule "dotfiles/.scripts/git-stree"]
-	path = dotfiles/.scripts/git-stree
-	url = https://github.com/tdd/git-stree.git
