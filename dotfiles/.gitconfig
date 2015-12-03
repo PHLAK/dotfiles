@@ -16,4 +16,4 @@
     push = HEAD
 [alias]
     unstage = reset HEAD --
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+	lg = log --graph --pretty=format:'%C(red)%h%Creset %C(dim white)-%Creset %s %C(dim white)•%Creset %C(bold blue)%an%Creset %C(green)[%cr] %C(yellow)%d%Creset'
