@@ -18,11 +18,10 @@ clients=(
     "python-heatclient"
     "python-keystoneclient"
     "python-neutronclient"
-    "python-novaclient==2.20.0"
+    "python-novaclient==2.18.0"
     "python-saharaclient"
     "python-swiftclient"
     "python-troveclient"
-    "python-openstackclient"
 )
 
 ## Install all the things
