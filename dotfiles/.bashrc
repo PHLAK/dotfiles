@@ -35,25 +35,25 @@ export PS1='\[\033[01;32m\]\u\[\033[01;30m\]@\[\033[01;${HOST_COLOR}\]\h\[\033[0
 
 ## Include custom bash functions
 if [[ -f ~/.bash_functions ]]; then
-    . ~/.bash_functions
+    source ~/.bash_functions
 fi
 
 ## Include custom bash aliases
 if [[ -f ~/.bash_aliases ]]; then
-    . ~/.bash_aliases
+    source ~/.bash_aliases
 fi
 
 ## Include local bash config
 if [[ -f ~/.bash_local ]]; then
-    . ~/.bash_local
+    source ~/.bash_local
 fi
 
 ## Include programmable completion features
 if ! shopt -oq posix; then
     if [[ -f /usr/share/bash-completion/bash_completion ]]; then
-        . /usr/share/bash-completion/bash_completion
+        source /usr/share/bash-completion/bash_completion
     elif [[ -f /etc/bash_completion ]]; then
-        . /etc/bash_completion
+        source /etc/bash_completion
   fi
 fi
 
