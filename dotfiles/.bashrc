@@ -56,3 +56,6 @@ if ! shopt -oq posix; then
         . /etc/bash_completion
   fi
 fi
+
+# Travis bash completion
+[[ -f /home/chris/.travis/travis.sh ]] && source /home/chris/.travis/travis.sh
