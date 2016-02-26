@@ -39,6 +39,13 @@ Thumbs.db
 ########################################
 .vagrant
 
+# WEB ASSETS
+########################################
+
+.sass-cache
+*.css.map
+*.js.map
+
 ## FILES TO NEVER EXCLUDE
 ########################################
 !.gitigore
