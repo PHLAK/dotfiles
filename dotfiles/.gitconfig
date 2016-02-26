@@ -16,4 +16,9 @@
     push = HEAD
 [alias]
     unstage = reset HEAD --
-	lg = log --graph --pretty=format:'%C(red)%h%Creset %C(dim white)-%Creset %s %C(dim white)•%Creset %C(bold blue)%an%Creset %C(green)[%cr] %C(yellow)%d%Creset'
+    lg = log --graph --pretty=format:'%C(red)%h%Creset %C(dim white)-%Creset %s %C(dim white)•%Creset %C(bold blue)%an%Creset %C(green)[%cr] %C(yellow)%d%Creset'
+[sendemail]
+    smtpencryption = tls
+    smtpServer = smtp.gmail.com
+    smtpServerPort = 587
+    smtpUser = Chris@ChrisKankiewicz.com
