@@ -44,10 +44,3 @@ if [[ ! -e "${HOME}/bin/soxy" ]]; then
         ln -s ${HOME}/.scripts/soxy/soxy ${HOME}/bin/soxy
     fi
 fi
-
-## Create symlink to git-stree bin
-if [[ ! -e "${HOME}/bin/git-stree" ]]; then
-    if [[ -e "${HOME}/.scripts/git-stree/git-stree"]]; then
-        ln -s ${HOME}/.scripts/git-stree/git-stree ${HOME}/bin/git-stree
-    fi
-fi
