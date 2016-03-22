@@ -26,7 +26,7 @@ for file in ${dotfiles}; do
         fi
     fi
 
-    ##
+    ## Create symlinks
     if [[ ! -h "${live_path}" ]]; then
         ln -s ${script_path}/dotfiles/${file} ${live_path}
     fi

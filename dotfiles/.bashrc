@@ -57,5 +57,5 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Travis bash completion
-[[ -f /home/chris/.travis/travis.sh ]] && source /home/chris/.travis/travis.sh
+# Include custom bash completion
+[[ -f ~/.bash_completion ]] && source ~/.bash_completion
