@@ -1,5 +1,6 @@
 # Travis bash completion
-[[ -f ${HOME}/.travis/travis.sh ]] && source ${HOME}/.travis/travis.sh
+[[ -f "${HOME}/.travis/travis.sh" ]] && source "${HOME}/.travis/travis.sh"
 
 # Heroku bash completion
-[[ -f ${HOME}/.heroku/plugins/heroku-bash-completion/heroku-completion.bash ]] && source ${HOME}/.heroku/plugins/heroku-bash-completion/heroku-completion.bash
+HEROKU_COMPLETION="${HOME}/.heroku/plugins/heroku-bash-completion/heroku-completion.bash"
+[[ -f "${HEROKU_COMPLETION}" ]] && source "${HEROKU_COMPLETION}"

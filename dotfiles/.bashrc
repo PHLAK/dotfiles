@@ -18,7 +18,7 @@ PROMPT_COMMAND="history -a; history -n"
 shopt -s checkwinsize
 
 ## Make less more friendly for non-text input files, see lesspipe(1)
-[[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
+[[ -x "/usr/bin/lesspipe" ]] && eval "$(SHELL=/bin/sh lesspipe)"
 
 ## Set hostname color (for PS1)
 if [[ -n "$SSH_CLIENT" ]]; then
@@ -34,28 +34,22 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 export PS1='\[\033[01;32m\]\u\[\033[01;30m\]@\[\033[01;${HOST_COLOR}\]\h\[\033[01;35m\] \w\[\033[01;33m\]$(__git_ps1)\[\033[01;30m\] \$\[\033[00m\] '
 
 ## Include custom bash functions
-if [[ -f ~/.bash_functions ]]; then
-    source ~/.bash_functions
-fi
+[[ -f "${HOME}/.bash_functions" ]] && source "${HOME}/.bash_functions"
 
 ## Include custom bash aliases
-if [[ -f ~/.bash_aliases ]]; then
-    source ~/.bash_aliases
-fi
+[[ -f "${HOME}/.bash_aliases" ]] && source "${HOME}/.bash_aliases"
 
 ## Include local bash config
-if [[ -f ~/.bash_local ]]; then
-    source ~/.bash_local
-fi
+[[ -f "${HOME}/.bash_local" ]] && source "${HOME}/.bash_local"
 
 ## Include programmable completion features
 if ! shopt -oq posix; then
-    if [[ -f /usr/share/bash-completion/bash_completion ]]; then
-        source /usr/share/bash-completion/bash_completion
-    elif [[ -f /etc/bash_completion ]]; then
-        source /etc/bash_completion
+    if [[ -f "/usr/share/bash-completion/bash_completion" ]]; then
+        source "/usr/share/bash-completion/bash_completion"
+    elif [[ -f "/etc/bash_completion" ]]; then
+        source "/etc/bash_completion"
   fi
 fi
 
 # Include custom bash completion
-[[ -f ~/.bash_completion ]] && source ~/.bash_completion
+[[ -f "${HOME}/.bash_completion" ]] && source "${HOME}/.bash_completion"
