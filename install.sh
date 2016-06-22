@@ -26,7 +26,7 @@ for file in ${dotfiles}; do
         fi
     fi
 
-    ##
+    ## Create symlinks
     if [[ ! -h "${live_path}" ]]; then
         ln -s ${script_path}/dotfiles/${file} ${live_path}
     fi
@@ -42,12 +42,5 @@ fi
 if [[ ! -e "${HOME}/bin/soxy" ]]; then
     if [[ -e "${HOME}/.scripts/soxy/soxy" ]]; then
         ln -s ${HOME}/.scripts/soxy/soxy ${HOME}/bin/soxy
-    fi
-fi
-
-## Create symlink to git-stree bin
-if [[ ! -e "${HOME}/bin/git-stree" ]]; then
-    if [[ -e "${HOME}/.scripts/git-stree/git-stree"]]; then
-        ln -s ${HOME}/.scripts/git-stree/git-stree ${HOME}/bin/git-stree
     fi
 fi

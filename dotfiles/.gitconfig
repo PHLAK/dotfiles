@@ -1,6 +1,7 @@
 [user]
     name = Chris Kankiewicz
     email = Chris@ChrisKankiewicz.com
+    signingkey = 09CEB5EB
 [branch "master"]
     remote = origin
     merge = refs/heads/master
