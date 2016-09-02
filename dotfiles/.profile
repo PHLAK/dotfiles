@@ -12,12 +12,15 @@ elif [[ -d "${HOME}/.composer/vendor/bin" ]]; then
     PATH="${HOME}/.composer/vendor/bin:${PATH}"
 fi
 
-
 # Add Heroku bin to path if it exists
 if [[ -d "/usr/local/heroku/bin" ]]; then
     PATH="/usr/local/heroku/bin:${PATH}"
 fi
 
+# Add local bin to the path if it exists
+if [[ -d "${HOME}/.local/bin" ]]; then
+    PATH="${HOME}/.local/bin:${PATH}"
+fi
 
 # Add user bin to path if it exists
 if [[ -d "${HOME}/bin" ]]; then
