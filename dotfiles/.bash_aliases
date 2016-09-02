@@ -15,4 +15,4 @@ alias termbin='nc termbin.com 9999'
 
 alias artisan='php artisan'
 
-alias phpunit='[[ -x "vendor/bin/phpunit" ]] && vendor/bin/phpunit || phpunit'
+alias phpunit='my_phpunit'
