@@ -1,3 +1,7 @@
+# Add shell auto-completion for composer
+COMPOSER_COMPLETION="${HOME}/.composer/vendor/stecman/composer-bash-completion-plugin/hooks/bash-completion"
+[[ -f "${COMPOSER_COMPLETION}" ]] && source "${COMPOSER_COMPLETION}"
+
 # Travis bash completion
 [[ -f "${HOME}/.travis/travis.sh" ]] && source "${HOME}/.travis/travis.sh"
 
