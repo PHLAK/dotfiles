@@ -16,3 +16,5 @@ alias termbin='nc termbin.com 9999'
 alias artisan='php artisan'
 
 alias phpunit='my_phpunit'
+
+alias weather='curl -s wttr.in | sed -n "1,8p"'
