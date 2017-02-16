@@ -17,4 +17,6 @@ alias artisan='php artisan'
 
 alias phpunit='my_phpunit'
 
+alias lastpass='lpass'
+
 alias weather='curl -s wttr.in | sed -n "1,8p"'
