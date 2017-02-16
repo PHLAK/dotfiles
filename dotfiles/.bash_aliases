@@ -19,4 +19,4 @@ alias phpunit='my_phpunit'
 
 alias lastpass='lpass'
 
-alias weather='curl -s wttr.in | sed -n "1,8p"'
+alias weather='curl -s wttr.in | sed -n "1,7p"; echo'
