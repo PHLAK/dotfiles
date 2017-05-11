@@ -21,6 +21,6 @@ if [[ -d "${HOME}/.local/bin" ]]; then
 fi
 
 # Add user bin to path if it exists
-if [[ -d "${HOME}/bin" ]]; then
-    PATH="${HOME}/bin:${PATH}"
+if [[ -d "${HOME}/.bin" ]]; then
+    PATH="${HOME}/.bin:${PATH}"
 fi

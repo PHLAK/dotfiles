@@ -34,6 +34,6 @@ for file in ${dotfiles}; do
 done
 
 ## Create ~/bin if it doesn't exist
-if [[ ! -d "${HOME}/bin" ]]; then
-    mkdir -p "${HOME}/bin"
+if [[ ! -d "${HOME}/.bin" ]]; then
+    mkdir -p "${HOME}/.bin"
 fi
