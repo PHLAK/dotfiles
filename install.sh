@@ -37,10 +37,3 @@ done
 if [[ ! -d "${HOME}/bin" ]]; then
     mkdir -p "${HOME}/bin"
 fi
-
-## Create symlink to soxy bin
-if [[ ! -e "${HOME}/bin/soxy" ]]; then
-    if [[ -e "${HOME}/.scripts/soxy/soxy" ]]; then
-        ln -s ${HOME}/.scripts/soxy/soxy ${HOME}/bin/soxy
-    fi
-fi
