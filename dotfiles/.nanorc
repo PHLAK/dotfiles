@@ -6,7 +6,7 @@
 ## ", ', ), >, ], and }.
 
 ## Use auto-indentation.
-set autoindent
+# set autoindent
 
 ## The characters treated as closing brackets when justifying
 ## paragraphs.  They cannot contain blank characters.  Only closing
