@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ## Get the script's path
 script_path="$(dirname $(readlink -f ${0}))"
@@ -15,7 +15,6 @@ if [[ ! -d "${script_path}/backups" ]]; then
 fi
 
 for file in ${dotfiles}; do
-
     ## Set live file path
     live_path="${HOME}/${file}"
 
@@ -30,7 +29,6 @@ for file in ${dotfiles}; do
     if [[ ! -h "${live_path}" ]]; then
         ln -s ${script_path}/dotfiles/${file} ${live_path}
     fi
-
 done
 
 ## Create ~/bin if it doesn't exist
