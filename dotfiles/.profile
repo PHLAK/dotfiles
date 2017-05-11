@@ -6,10 +6,8 @@ if [[ -n "${BASH_VERSION}" ]]; then
 fi
 
 # Add Composer bin to path if it exists
-if [[ -d "${HOME}/.composer/vendor/bin" ]]; then
-    PATH="${HOME}/.composer/vendor/bin:${PATH}"
-elif [[ -d "${HOME}/.config/composer/vendor/bin" ]]; then
-    PATH="${HOME}/.config/composer/vendor/bin:${PATH}"
+if [[ -d "${COMPOSER_HOME}/vendor/bin" ]]; then
+    PATH="${COMPOSER_HOME}/vendor/bin:${PATH}"
 fi
 
 # Add Heroku bin to path if it exists

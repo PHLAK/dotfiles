@@ -1,0 +1,2 @@
+## Set COMPOSER_HOME variable
+export COMPOSER_HOME="${HOME}/.config/composer"
