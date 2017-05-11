@@ -20,18 +20,8 @@ shopt -s checkwinsize
 ## Make less more friendly for non-text input files, see lesspipe(1)
 [[ -x "/usr/bin/lesspipe" ]] && eval "$(SHELL=/bin/sh lesspipe)"
 
-## Set hostname color (for PS1)
-if [[ -n "$SSH_CLIENT" ]]; then
-    export HOST_COLOR=31m
-else
-    export HOST_COLOR=34m
-fi
-
-## Show git dirty state (for PS1)
-export GIT_PS1_SHOWDIRTYSTATE=1
-
-## Set custom bash prompt
-export PS1='\[\033[01;32m\]\u\[\033[01;30m\]@\[\033[01;${HOST_COLOR}\]\h\[\033[01;35m\] \w\[\033[01;33m\]$(__git_ps1)\[\033[01;30m\] \$\[\033[00m\] '
+## Include custom PS1
+[[ -f "${HOME}/.bash_ps1" ]] && source "${HOME}/.bash_ps1"
 
 ## Include custom bash functions
 [[ -f "${HOME}/.bash_functions" ]] && source "${HOME}/.bash_functions"
