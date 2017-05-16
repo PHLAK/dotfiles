@@ -1,9 +1,6 @@
 ## If not running interactively, don't do anything
 [[ -z "$PS1" ]] && return
 
-## Include custom bash variables
-[[ -f "${HOME}/.bash_vars" ]] && source "${HOME}/.bash_vars"
-
 ## Don't allow duplicate lines in the history
 HISTCONTROL=ignoreboth
 

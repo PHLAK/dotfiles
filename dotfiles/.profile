@@ -5,6 +5,9 @@ if [[ -n "${BASH_VERSION}" ]]; then
     fi
 fi
 
+## Include custom bash variables
+[[ -f "${HOME}/.bash_vars" ]] && source "${HOME}/.bash_vars"
+
 # Add Composer bin to path if it exists
 if [[ -d "${COMPOSER_HOME}/vendor/bin" ]]; then
     PATH="${COMPOSER_HOME}/vendor/bin:${PATH}"
