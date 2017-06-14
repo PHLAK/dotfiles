@@ -16,6 +16,7 @@
 [remote "origin"]
     push = HEAD
 [alias]
+    fast-forward = merge --ff-only
     unstage = reset HEAD --
     lg = log --graph --pretty=format:'%C(red)%h%Creset %C(dim white)-%Creset %s %C(dim white)•%Creset %C(bold blue)%an%Creset %C(green)[%cr] %C(yellow)%d%Creset'
 [sendemail]
