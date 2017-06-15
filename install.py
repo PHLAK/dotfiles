@@ -13,7 +13,7 @@ def backup(path):
     now = datetime.datetime.now()
 
     backup_dir = os.path.join(working_dir, 'backups')
-    backup_name = os.path.basename(path) + '.' + now + '.bak'
+    backup_name = os.path.basename(path) + '.' + now.strftime('%F_%T') + '.bak'
     backup_path = os.path.join(backup_dir, backup_name)
 
     os.rename(path, backup_path)
@@ -24,7 +24,7 @@ def symlink_file(path):
     base_name = os.path.basename(path)
     live_path = os.path.join(os.path.expanduser('~'), base_name)
 
-    if os.path.isfile(live_path) and not os.path.islink(live_path):
+    if os.path.exists(live_path) and not os.path.islink(live_path):
         print('Backing up existing file ' + base_name + ' ... ', end='')
         backup(path)
         print('DONE')
