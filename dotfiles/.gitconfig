@@ -24,3 +24,5 @@
     smtpServer = smtp.gmail.com
     smtpServerPort = 587
     smtpUser = Chris@ChrisKankiewicz.com
+[commit]
+	gpgsign = true
