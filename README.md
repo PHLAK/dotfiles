@@ -5,9 +5,9 @@ Custom Linux configuration files by, [Chris Kankiewicz](http://www.ChrisKankiewi
 
 ### Installation
 
-Clone the project to your home folder and run the install.sh script
+Clone the project to your home folder and run the `install.py` script:
 
 ```bash
-git clone --recursive git@github.com:PHLAK/dotfiles.git ~/.userconfig
-bash ~/.userconfig/install.sh
+git clone git@github.com:PHLAK/dotfiles.git ~/.userconfig
+bash ~/.userconfig/install.py
 ```
