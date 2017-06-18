@@ -26,7 +26,7 @@ def symlink_file(path):
 
     if os.path.exists(live_path) and not os.path.islink(live_path):
         print('Backing up existing file ' + base_name + ' ... ', end='')
-        backup(path)
+        backup(live_path)
         print('DONE')
 
     if not os.path.islink(live_path):
