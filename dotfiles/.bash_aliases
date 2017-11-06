@@ -20,3 +20,5 @@ alias phpunit='my_phpunit'
 alias lastpass='lpass'
 
 alias weather='curl -s wttr.in | sed -n "1,7p"; echo'
+
+alias transfer='rsync -rzvvhP'
