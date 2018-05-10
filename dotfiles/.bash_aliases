@@ -1,3 +1,5 @@
+alias please='sudo !!'
+
 alias ls='ls --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
@@ -9,6 +11,8 @@ alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+
+alias clip='xclip -selection c'
 
 alias upaste='pastebinit -b http://paste.ubuntu.com'
 alias termbin='nc termbin.com 9999'
