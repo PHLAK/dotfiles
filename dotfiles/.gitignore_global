@@ -5,6 +5,7 @@
 .settings/
 *.sublime-project
 *.sublime-workspace
+boxfile.yml.swp
 
 ## PACKAGES
 ########################################
