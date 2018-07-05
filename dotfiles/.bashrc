@@ -21,7 +21,11 @@ shopt -s checkwinsize
 [[ -x "/usr/bin/lesspipe" ]] && eval "$(SHELL=/bin/sh lesspipe)"
 
 ## Include custom PS1
-[[ -f "${HOME}/.bash_ps1" ]] && source "${HOME}/.bash_ps1"
+if [[ ${ASCIINEMA_REC} ]]; then
+    [[ -f "${HOME}/.bash_ps1_asciinema" ]] && source "${HOME}/.bash_ps1_asciinema"
+else
+    [[ -f "${HOME}/.bash_ps1" ]] && source "${HOME}/.bash_ps1"
+fi
 
 ## Include custom bash functions
 [[ -f "${HOME}/.bash_functions" ]] && source "${HOME}/.bash_functions"
