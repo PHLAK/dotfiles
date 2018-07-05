@@ -1,8 +1,8 @@
 ## Build our custom PS1
-PS1=${PS1}"\[\033[01;30m\]"  # Set DOLLAR SIGN color to black
-PS1=${PS1}"\$"               # DOLLAR SIGN
-PS1=${PS1}"\[\033[00m\]"     # Set USER TEXT color to white
-PS1=${PS1}" "                # <space>
+PS1="\[\033[01;30m\]"     # Set DOLLAR SIGN color to black
+PS1=${PS1}"\$"            # DOLLAR SIGN
+PS1=${PS1}"\[\033[00m\]"  # Set USER TEXT color to white
+PS1=${PS1}" "             # <space>
 
 # Set the environment variable
 export PS1=${PS1}
