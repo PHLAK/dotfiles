@@ -1,4 +1,4 @@
-## Set hostname color
+## Set hostname color to blue (local) or red (remote)
 [[ -n "$SSH_CLIENT" ]] && export HOST_COLOR=31m || export HOST_COLOR=34m
 
 ## Show git dirty state (*/+) in PS1
@@ -9,7 +9,7 @@ PS1="\[\033[01;32m\]"                   # Set USER color to green
 PS1=${PS1}"\u"                          # USER
 PS1=${PS1}"\[\033[01;30m\]"             # Set ay symbol color to black
 PS1=${PS1}"@"                           # AT SIGN
-PS1=${PS1}"\[\033[01;${HOST_COLOR}\]"   # Set HOST color to blue (local) or red (remote)
+PS1=${PS1}"\[\033[01;${HOST_COLOR}\]"   # Set HOST color dynamically
 PS1=${PS1}"\h"                          # HOST
 PS1=${PS1}" "                           # <space>
 PS1=${PS1}"\[\033[01;35m\]"             # Set WORKDING DIRECTORY color to purple
@@ -19,7 +19,7 @@ PS1=${PS1}"\$(__git_ps1)"               # GIT PS1
 PS1=${PS1}" "                           # <space>
 PS1=${PS1}"\[\033[01;30m\]"             # Set DOLLAR SIGN color to black
 PS1=${PS1}"\$"                          # DOLLAR SIGN
-PS1=${PS1}"\[\033[00m\]"                # Set USER TEXT to color to white
+PS1=${PS1}"\[\033[00m\]"                # Set USER TEXT color to white
 PS1=${PS1}" "                           # <space>
 
 # Set the environment variable
