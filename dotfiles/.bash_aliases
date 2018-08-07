@@ -24,3 +24,5 @@ alias lastpass='lpass'
 alias weather='curl -s wttr.in | sed -n "1,7p"; echo'
 
 alias transfer='rsync -rzvvhP'
+
+alias ssh-copy-key='cat ${HOME}/.ssh/id_rsa.pub | tr -d "\n" | xclip -selection clipboard && echo "SSH public key coppied to clipboard"'
