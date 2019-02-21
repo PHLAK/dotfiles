@@ -13,3 +13,6 @@ VAGRANT_COMPLETION="/opt/vagrant/embedded/gems/gems/vagrant-${VAGRANT_VERSION}/c
 # Heroku bash completion
 HEROKU_COMPLETION="${HOME}/.heroku/plugins/heroku-bash-completion/heroku-completion.bash"
 [[ -f "${HEROKU_COMPLETION}" ]] && source "${HEROKU_COMPLETION}"
+
+# Kubectl bash completion
+[[ $(command -v kubectl) ]] && source <(kubectl completion bash)
