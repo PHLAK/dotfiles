@@ -8,6 +8,11 @@ if [[ -n "${BASH_VERSION}" ]]; then
     fi
 fi
 
+# Apply custom Xmodmap config
+if [[ -f ${HOME}/.xmodmap ]]; then
+    xmodmap ${HOME}/.xmodmap
+fi
+
 # Add Composer bin to path if it exists
 if [[ -d "${COMPOSER_HOME}/vendor/bin" ]]; then
     PATH="${COMPOSER_HOME}/vendor/bin:${PATH}"

@@ -22,7 +22,7 @@ shopt -s checkwinsize
 
 ## Include custom PS1
 if [[ ${ASCIINEMA_REC} ]]; then
-    [[ -f "${HOME}/.bash_ps1_asciinema" ]] && source "${HOME}/.bash_ps1_asciinema"
+    [[ -f "${HOME}/.asciinema_ps1" ]] && source "${HOME}/.asciinema_ps1"
 else
     [[ -f "${HOME}/.bash_ps1" ]] && source "${HOME}/.bash_ps1"
 fi
@@ -42,7 +42,7 @@ if ! shopt -oq posix; then
         source "/usr/share/bash-completion/bash_completion"
     elif [[ -f "/etc/bash_completion" ]]; then
         source "/etc/bash_completion"
-  fi
+    fi
 fi
 
 # Include custom bash completion

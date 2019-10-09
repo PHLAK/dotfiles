@@ -1,2 +1,8 @@
 ## Set COMPOSER_HOME variable
 export COMPOSER_HOME="${HOME}/.config/composer"
+
+## PHP Xdebug Config
+export XDEBUG_CONFIG="idekey=VSCODE"
+
+## NPM Config Prefix
+export NPM_CONFIG_PREFIX=~/.local/

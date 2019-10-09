@@ -8,6 +8,6 @@ Custom Linux configuration files by, [Chris Kankiewicz](http://www.ChrisKankiewi
 Clone the project to your home folder and run the `install.py` script:
 
 ```bash
-git clone git@github.com:PHLAK/dotfiles.git ~/.userconfig
-~/.userconfig/install.py
+git clone git@github.com:PHLAK/dotfiles.git ~/.dotfiles
+~/.dotfiles/install.py
 ```
