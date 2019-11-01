@@ -27,14 +27,14 @@ else
     [[ -f "${HOME}/.bash_ps1" ]] && source "${HOME}/.bash_ps1"
 fi
 
+## Include custom path definitions
+[[ -f "${HOME}/.bash_path" ]] && source "${HOME}/.bash_path"
+
 ## Include custom bash functions
 [[ -f "${HOME}/.bash_functions" ]] && source "${HOME}/.bash_functions"
 
 ## Include custom bash aliases
 [[ -f "${HOME}/.bash_aliases" ]] && source "${HOME}/.bash_aliases"
-
-## Include local bash config
-[[ -f "${HOME}/.bash_local" ]] && source "${HOME}/.bash_local"
 
 ## Include programmable completion features
 if ! shopt -oq posix; then
@@ -47,3 +47,6 @@ fi
 
 # Include custom bash completion
 [[ -f "${HOME}/.bash_completion" ]] && source "${HOME}/.bash_completion"
+
+## Include local bash config
+[[ -f "${HOME}/.bash_local" ]] && source "${HOME}/.bash_local"

@@ -5,11 +5,6 @@ COMPOSER_COMPLETION="${COMPOSER_HOME}/vendor/stecman/composer-bash-completion-pl
 # Travis bash completion
 [[ -f "${HOME}/.travis/travis.sh" ]] && source "${HOME}/.travis/travis.sh"
 
-# Vagrant bash completion
-#VAGRANT_VERSION="$(vagrant --version | awk '{ print $2 }')"
-#VAGRANT_COMPLETION="/opt/vagrant/embedded/gems/gems/vagrant-${VAGRANT_VERSION}/contrib/bash/completion.sh"
-#[[ -f "${VAGRANT_COMPLETION}" ]] && source "${VAGRANT_COMPLETION}"
-
 # Heroku bash completion
 HEROKU_COMPLETION="${HOME}/.heroku/plugins/heroku-bash-completion/heroku-completion.bash"
 [[ -f "${HEROKU_COMPLETION}" ]] && source "${HEROKU_COMPLETION}"

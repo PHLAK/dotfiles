@@ -1,0 +1,5 @@
+# Add user bin folder to the path
+PATH="${HOME}/.local/bin:${PATH}"
+
+# Add local and globl Composer bin folders to the path
+PATH="vendor/bin:${COMPOSER_HOME}/vendor/bin:${PATH}"

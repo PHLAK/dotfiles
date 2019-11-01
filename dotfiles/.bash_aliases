@@ -12,12 +12,6 @@ alias weather='curl -s wttr.in | sed -n "1,7p"; echo'
 
 alias artisan='php artisan'
 
-alias phpunit='my_phpunit'
-
-if [[ $(command -v lpass) ]]; then
-    alias lastpass='lpass'
-fi
-
 if [[ $(command -v hub) ]]; then
     alias git='hub'
 fi
