@@ -1,13 +1,26 @@
 dotfiles
 ========
-Custom Linux configuration files by, [Chris Kankiewicz](http://www.ChrisKankiewicz.com)
 
+Custom Linux configuration files by, [Chris Kankiewicz](http://www.ChrisKankiewicz.com)
 
 ### Installation
 
-Clone the project to your home folder and run the `install.py` script:
+**Init script**
 
 ```bash
-git clone git@github.com:PHLAK/dotfiles.git ~/.dotfiles
-~/.dotfiles/install.py
+curl -s http://github.com/PHLAK/dotfiles/init | bash
+```
+
+**Manual installation**
+
+```bash
+git clone --bare https://github.com/PHLAK/dotfiles.git ${HOME}/.dotfiles
+
+alias dotfiles='git --git-dir=${HOME}/.dotfiles --work-tree=${HOME}'
+
+dotfiles checkout
+
+dotfiles config status.showUntrackedFiles no
+
+dotfiles remote set-url origin git@github.com:PHLAK/dotfiles.git
 ```
