@@ -29,3 +29,5 @@ dotfiles config status.showUntrackedFiles no
 dotfiles remote set-url origin git@github.com:PHLAK/dotfiles.git
 
 echo ">>> Dotfiles sucessfully installed!"
+
+source ${HOME}/.profile
