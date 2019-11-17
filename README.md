@@ -8,7 +8,7 @@ Custom Linux configuration files by, [Chris Kankiewicz](http://www.ChrisKankiewi
 **Init script**
 
 ```bash
-curl --silent https://ln.phlak.net/dotfiles-init | bash
+curl -sSL https://ln.phlak.net/dotfiles-init | bash
 ```
 
 **Manual installation**
@@ -23,4 +23,6 @@ dotfiles checkout
 dotfiles config status.showUntrackedFiles no
 
 dotfiles remote set-url origin git@github.com:PHLAK/dotfiles.git
+
+source ${HOME}/.profile
 ```
