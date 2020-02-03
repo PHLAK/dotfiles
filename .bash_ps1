@@ -14,11 +14,11 @@ PS1=${PS1}"\h"                          # HOST
 PS1=${PS1}" "                           # <space>
 PS1=${PS1}"\[\033[01;35m\]"             # Set WORKDING DIRECTORY color to purple
 PS1=${PS1}"\w"                          # WORKING DIRECTORY
+PS1=${PS1}"\n"                          # <new line>
 PS1=${PS1}"\[\033[01;33m\]"             # Set GIT PS1 color to yellow
-PS1=${PS1}"\$(__git_ps1)"               # GIT PS1
-PS1=${PS1}" "                           # <space>
-PS1=${PS1}"\[\033[01;30m\]"             # Set DOLLAR SIGN color to black
-PS1=${PS1}"\$"                          # DOLLAR SIGN
+PS1=${PS1}"\$(__git_ps1 '(%s) ')"       # GIT PS1
+PS1=${PS1}"\[\033[01;30m\]"             # Set CUSTOM PROMPT color to black
+PS1=${PS1}"$"                           # CUSTOM PROMPT
 PS1=${PS1}"\[\033[00m\]"                # Set USER TEXT color to white
 PS1=${PS1}" "                           # <space>
 
