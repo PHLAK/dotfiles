@@ -5,7 +5,10 @@
 export GIT_PS1_SHOWDIRTYSTATE=1
 
 ## Build our custom PS1
-PS1="\[\033[01;32m\]"                   # Set USER color to green
+
+PS1="☕"                                 # EMOJI
+PS1=${PS1}" "                           # <space>
+PS1=${PS1}"\[\033[01;32m\]"             # Set USER color to green
 PS1=${PS1}"\u"                          # USER
 PS1=${PS1}"\[\033[01;30m\]"             # Set at symbol color to black
 PS1=${PS1}"@"                           # AT SIGN
@@ -15,10 +18,13 @@ PS1=${PS1}" "                           # <space>
 PS1=${PS1}"\[\033[01;35m\]"             # Set WORKDING DIRECTORY color to purple
 PS1=${PS1}"\w"                          # WORKING DIRECTORY
 PS1=${PS1}"\n"                          # <new line>
+PS1=${PS1}"\[\033[01;36m\]"             # Set TIMESTAMP color to teal
+PS1=${PS1}"[\D{%b %d %I:%M %p}]"        # TIMESTAMP
+PS1=${PS1}" "                           # <space>
 PS1=${PS1}"\[\033[01;33m\]"             # Set GIT PS1 color to yellow
 PS1=${PS1}"\$(__git_ps1 '(%s) ')"       # GIT PS1
-PS1=${PS1}"\[\033[01;30m\]"             # Set CUSTOM PROMPT color to black
-PS1=${PS1}"$"                           # CUSTOM PROMPT
+PS1=${PS1}"\[\033[01;30m\]"             # Set PROMPT color to black
+PS1=${PS1}"$"                           # PROMPT
 PS1=${PS1}"\[\033[00m\]"                # Set USER TEXT color to white
 PS1=${PS1}" "                           # <space>
 
