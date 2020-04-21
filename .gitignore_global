@@ -2,11 +2,10 @@
 ########################################
 .buildpath
 .project
-.settings/
+.settings
+.vscode
 *.sublime-project
 *.sublime-workspace
-.vscode/
-boxfile.yml.swp
 
 ## PACKAGES
 ########################################
