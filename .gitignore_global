@@ -1,5 +1,6 @@
 ## PROJECT FILES
 ########################################
+
 .buildpath
 .project
 .settings
@@ -9,10 +10,7 @@
 
 ## PACKAGES
 ########################################
-# It's better to unpack these files and
-# commit the raw source, git has its
-# own built in compression methods
-########################################
+
 *.7z
 *.dmg
 *.gz
@@ -24,6 +22,7 @@
 
 ## LOGS AND DATABASES
 ########################################
+
 *.db
 *.log
 *.sql
@@ -31,6 +30,7 @@
 
 ## OS GENERATED FILES
 ########################################
+
 .DS_Store*
 ehthumbs.db
 Icon?
@@ -38,6 +38,7 @@ Thumbs.db
 
 ## VAGRANT
 ########################################
+
 .vagrant
 
 # WEB ASSETS
@@ -49,4 +50,5 @@ Thumbs.db
 
 ## FILES TO NEVER EXCLUDE
 ########################################
+
 !.gitigore
