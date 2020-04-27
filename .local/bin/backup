@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+set -o errexit
+
+echo "> Requesting root privileges"
+if [[ $(sudo whoami) != "root" ]]; then
+    echo "ERROR: This script requires root priveleges to run"
+    exit 1
+fi
+
+if [[ "${1:-local}" == "local" ]]; then
+    export RESTIC_REPOSITORY="/backups/"
+elif [[ "${1:-local}" == "backblaze" ]]; then
+    export RESTIC_REPOSITORY="b2:phlak-restic"
+else
+    echo "ERROR: Unrecognized destination"
+    exit 1
+fi
+
+export $(sudo grep -v '^#' /etc/restic/config | xargs)
+
+sudo --preserve-env restic unlock
+
+sudo --preserve-env restic backup \
+    --files-from /etc/restic/includes.list \
+    --exclude-caches \
+    --exclude-file=/etc/restic/excludes.list \
+    --exclude-if-present .restic-ignore
+
+sudo --preserve-env restic forget --host "${HOSTNAME}" \
+    --keep-last ${KEEP_LAST} \
+    --keep-hourly ${KEEP_HOURLY} \
+    --keep-daily ${KEEP_DAILY} \
+    --keep-weekly ${KEEP_WEEKLY} \
+    --keep-monthly ${KEEP_MONTHLY} \
+    --keep-yearly ${KEEP_YEARLY}
