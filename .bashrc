@@ -8,8 +8,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 ## for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=2048
-HISTFILESIZE=8192
+HISTSIZE=1000
+HISTFILESIZE=10000
 
 ## Share bash command history with all open terminals
 PROMPT_COMMAND="history -a; history -n"
