@@ -24,21 +24,16 @@ function screenshotArea() {
 ## SCRIPT USAGE
 ########################################
 
-function usageShort() {
-    echo "Usage: $(basename ${0}) [OPTIONS]"
-}
-
-function usageLong() {
-    usageShort
-
+function usage() {
 	cat <<-EOF
+		Usage: $(basename ${0}) [OPTIONS]
 
-	    OPTIONS:
-
-	        -a, --area         Capture a screenshot of a selectable area
-	        -h, --help         Print this help dialogue
-	        -f, --full-screen  Capture a screenshot of the entire screen
-	        -w, --window       Capture a screenshot of the active window
+		    OPTIONS:
+	
+		        -a, --area         Capture a screenshot of a selectable area
+		        -h, --help         Print this help dialogue
+		        -f, --full-screen  Capture a screenshot of the entire screen
+		        -w, --window       Capture a screenshot of the active window
 
 	EOF
 }
@@ -51,7 +46,7 @@ eval set -- "$(getopt -n "${0}" -o ahfw -l "area,help,full-screen,window" -- "$@
 while true; do
     case "${1}" in
         -a|--area)         screenshotArea; exit ;;
-        -h|--help)         usageLong; exit ;;
+        -h|--help)         usage; exit ;;
         -f|--full-screen)  screenshotFullScreen; exit ;;
         -w|--window)       screenshotWindow; exit ;;
         --)                shift; break ;;
@@ -61,4 +56,4 @@ done
 ## MAIN
 ########################################
 
-usageShort
+usage
