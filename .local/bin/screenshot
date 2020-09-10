@@ -14,11 +14,15 @@ function screenshotFullScreen() {
 }
 
 function screenshotWindow() {
-    gnome-screenshot --clipboard --file "${FILE_LOCATION}" --window --border-effect shadow 
+    gnome-screenshot --clipboard --file "${FILE_LOCATION}" --window --border-effect shadow
 }
 
 function screenshotArea() {
     gnome-screenshot --clipboard --file "${FILE_LOCATION}" --area
+}
+
+function notify() {
+    notify-send --icon image "Screenshot Captured" "${FILE_LOCATION}"
 }
 
 ## SCRIPT USAGE
@@ -29,7 +33,7 @@ function usage() {
 		Usage: $(basename ${0}) [OPTIONS]
 
 		    OPTIONS:
-	
+
 		        -a, --area         Capture a screenshot of a selectable area
 		        -h, --help         Print this help dialogue
 		        -f, --full-screen  Capture a screenshot of the entire screen
@@ -45,10 +49,10 @@ eval set -- "$(getopt -n "${0}" -o ahfw -l "area,help,full-screen,window" -- "$@
 
 while true; do
     case "${1}" in
-        -a|--area)         screenshotArea; exit ;;
+        -a|--area)         screenshotArea && notify; exit ;;
         -h|--help)         usage; exit ;;
-        -f|--full-screen)  screenshotFullScreen; exit ;;
-        -w|--window)       screenshotWindow; exit ;;
+        -f|--full-screen)  screenshotFullScreen && notify; exit ;;
+        -w|--window)       screenshotWindow && notify; exit ;;
         --)                shift; break ;;
     esac
 done
