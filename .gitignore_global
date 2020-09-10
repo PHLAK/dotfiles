@@ -2,6 +2,8 @@
 ########################################
 
 .buildpath
+.coverage
+.phpunit.result.cache
 .project
 .settings
 .vscode
