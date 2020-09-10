@@ -13,7 +13,16 @@ alias upaste='pastebinit -b http://paste.ubuntu.com'
 alias weather='curl -s wttr.in | sed -n "1,7p"; echo'
 
 alias artisan='php artisan'
+# alias phpunit='sudo phpdismod -s cli xdebug && phpunit; sudo phpenmod -s cli xdebug'
+
+alias dps='docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Networks}}\t{{.Ports}}\t{{.Command}}"'
 
 if [[ $(command -v hub) ]]; then
     alias git='hub'
 fi
+
+alias speedtest='docker run -it --rm --net host phlak/speedtest'
+
+alias rm='trash-put'
+
+alias myip='dig -4 @resolver1.opendns.com myip.opendns.com +short'
