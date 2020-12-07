@@ -1,5 +1,8 @@
 # Add user bin folder to the path
 PATH="${HOME}/.local/bin:${PATH}"
 
-# Add local and globl Composer bin folders to the path
+# Add Ruby gems folder to the path
+PATH="${HOME}/.gem/bin/:${PATH}"
+
+# Add local and global Composer bin folders to the path
 PATH="vendor/bin:app/vendor/bin:${COMPOSER_HOME}/vendor/bin:${PATH}"
