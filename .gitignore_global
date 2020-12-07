@@ -27,7 +27,6 @@
 
 *.db
 *.log
-*.sql
 *.sqlite
 
 ## OS GENERATED FILES
@@ -43,7 +42,7 @@ Thumbs.db
 
 .vagrant
 
-# WEB ASSETS
+## WEB ASSETS
 ########################################
 
 .sass-cache
@@ -54,3 +53,9 @@ Thumbs.db
 ########################################
 
 !.gitigore
+
+## FORGE CLI
+########################################
+
+.env.forge.*
+forge.yml
