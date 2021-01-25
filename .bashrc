@@ -17,6 +17,9 @@ PROMPT_COMMAND="history -a; history -n"
 ## Update the values of LINES and COLUMNS after each command if windows size changes
 shopt -s checkwinsize
 
+## Enable globstar
+shopt -s globstar
+
 ## Make less more friendly for non-text input files, see lesspipe(1)
 [[ -x "/usr/bin/lesspipe" ]] && eval "$(SHELL=/bin/sh lesspipe)"
 
