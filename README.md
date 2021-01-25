@@ -8,7 +8,7 @@ Custom Linux configuration files by, [Chris Kankiewicz](http://www.ChrisKankiewi
 **Init script**
 
 ```bash
-curl -sSL https://ln.phlak.net/dotfiles-init | bash
+curl -sSL https://phlak.link/dotfiles-init | bash
 ```
 
 **Manual installation**
