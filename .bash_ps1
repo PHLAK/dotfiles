@@ -30,9 +30,6 @@ function generatePS1() {
     PS1+="\[\033[1;${HOST_COLOR}\]"    # Set HOST color dynamically
     PS1+="\h"                          # HOST
     PS1+=" "                           # <space>
-    PS1+="\[\033[1;30m\]"              # Set SEPARATOR color to black
-    PS1+="›"                           # SEPARATOR
-    PS1+=" "                           # <space>
     PS1+="\[\033[0;35m\]"              # Set WORKDING DIRECTORY color to purple
     PS1+="${WORKING_DIRECTORY}"        # WORKING DIRECTORY
     PS1+="\n"                          # <new line>
