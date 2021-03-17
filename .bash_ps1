@@ -13,6 +13,13 @@ function generatePS1() {
     ## Set hostname color to blue (local) or red (remote)
     [[ -n "$SSH_CLIENT" ]] && local HOST_COLOR=31m || local HOST_COLOR=34m
 
+    ## Set working directory string based on the current working directory
+    if [[ ${PWD} = ${HOME}/workspace/* ]] && git rev-parse --is-inside-work-tree &>/dev/null; then
+        local WORKING_DIRECTORY="⦗ ${PWD#${HOME}/workspace/*/} ⦘"
+    else
+        local WORKING_DIRECTORY="$(dirs)"
+    fi
+
     ## Build our custom PS1
     PS1="☕"                            # EMOJI
     PS1+=" "                           # <space>
@@ -24,7 +31,7 @@ function generatePS1() {
     PS1+="\h"                          # HOST
     PS1+=" "                           # <space>
     PS1+="\[\033[0;35m\]"              # Set WORKDING DIRECTORY color to purple
-    PS1+="\w"                          # WORKING DIRECTORY
+    PS1+="${WORKING_DIRECTORY}"        # WORKING DIRECTORY
     PS1+="\n"                          # <new line>
     PS1+="\[\033[0;36m\]"              # Set TIMESTAMP color to teal
     PS1+="\D{%b %d • %I:%M %p}"        # TIMESTAMP
