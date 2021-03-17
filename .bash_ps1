@@ -1,32 +1,38 @@
-## Set hostname color to blue (local) or red (remote)
-[[ -n "$SSH_CLIENT" ]] && export HOST_COLOR=31m || export HOST_COLOR=34m
-
 ## Show git dirty state (*/+) in PS1
 export GIT_PS1_SHOWDIRTYSTATE=1
 
-## Build our custom PS1
+## Set function to generate PS1
+export PROMPT_COMMAND=generatePS1
 
-PS1="☕"                               # EMOJI
-PS1=${PS1}" "                         # <space>
-PS1=${PS1}"\[\033[1;32m\]"            # Set USER color to green
-PS1=${PS1}"\u"                        # USER
-PS1=${PS1}"\[\033[1;30m\]"            # Set AT SIGHN color to black
-PS1=${PS1}"@"                         # AT SIGN
-PS1=${PS1}"\[\033[1;${HOST_COLOR}\]"  # Set HOST color dynamically
-PS1=${PS1}"\h"                        # HOST
-PS1=${PS1}" "                         # <space>
-PS1=${PS1}"\[\033[0;35m\]"            # Set WORKDING DIRECTORY color to purple
-PS1=${PS1}"\w"                        # WORKING DIRECTORY
-PS1=${PS1}"\n"                        # <new line>
-PS1=${PS1}"\[\033[0;36m\]"            # Set TIMESTAMP color to teal
-PS1=${PS1}"\D{%b %d %I:%M %p}"        # TIMESTAMP
-PS1=${PS1}" "                         # <space>
-PS1=${PS1}"\[\033[0;33m\]"            # Set GIT PS1 color to yellow
-PS1=${PS1}"\$(__git_ps1 '(%s) ')"     # GIT PS1
-PS1=${PS1}"\[\033[1;30m\]"            # Set PROMPT color to black
-PS1=${PS1}"$"                         # PROMPT
-PS1=${PS1}"\[\033[00m\]"              # Set USER TEXT color to white
-PS1=${PS1}" "                         # <space>
+function generatePS1() {
+    local LAST_EXIT_CODE=${PIPESTATUS[-1]} # NOTE: Must be first
 
-# Set the environment variable
-export PS1=${PS1}
+    ## Set prompt color based on previous command exit code
+    [[ ${LAST_EXIT_CODE} == 0 ]] && local PROMPT_COLOR=30m || local PROMPT_COLOR=31m
+
+    ## Set hostname color to blue (local) or red (remote)
+    [[ -n "$SSH_CLIENT" ]] && local HOST_COLOR=31m || local HOST_COLOR=34m
+
+    ## Build our custom PS1
+    PS1="☕"                            # EMOJI
+    PS1+=" "                           # <space>
+    PS1+="\[\033[1;32m\]"              # Set USER color to green
+    PS1+="\u"                          # USER
+    PS1+="\[\033[1;30m\]"              # Set AT SIGN color to black
+    PS1+="@"                           # AT SIGN
+    PS1+="\[\033[1;${HOST_COLOR}\]"    # Set HOST color dynamically
+    PS1+="\h"                          # HOST
+    PS1+=" "                           # <space>
+    PS1+="\[\033[0;35m\]"              # Set WORKDING DIRECTORY color to purple
+    PS1+="\w"                          # WORKING DIRECTORY
+    PS1+="\n"                          # <new line>
+    PS1+="\[\033[0;36m\]"              # Set TIMESTAMP color to teal
+    PS1+="\D{%b %d • %I:%M %p}"        # TIMESTAMP
+    PS1+=" "                           # <space>
+    PS1+="\[\033[0;33m\]"              # Set GIT PS1 color to yellow
+    PS1+="\$(__git_ps1 '(%s) ')"       # GIT PS1
+    PS1+="\[\033[1;${PROMPT_COLOR}\]"  # Set PROMPT color
+    PS1+="$"                           # PROMPT
+    PS1+="\[\033[00m\]"                # Set USER TEXT color to white
+    PS1+=" "                           # <space>
+}
