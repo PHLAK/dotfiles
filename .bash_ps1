@@ -8,17 +8,7 @@ function generatePS1() {
     local LAST_EXIT_CODE=${PIPESTATUS[-1]} # NOTE: Must be first
 
     ## Set prompt color based on previous command exit code
-    [[ ${LAST_EXIT_CODE} == 0 ]] && local PROMPT_COLOR=30m || local PROMPT_COLOR=31m
-
-    ## Set hostname color to blue (local) or red (remote)
-    [[ -n "$SSH_CLIENT" ]] && local HOST_COLOR=31m || local HOST_COLOR=34m
-
-    ## Set working directory string based on the current working directory
-    if [[ ${PWD} = ${HOME}/workspace/* ]] && git rev-parse --is-inside-work-tree &>/dev/null; then
-        local WORKING_DIRECTORY="${PWD#${HOME}/workspace/*/}"
-    else
-        local WORKING_DIRECTORY="$(dirs)"
-    fi
+    local PROMPT_COLOR="$([[ ${LAST_EXIT_CODE} == 0 ]] && echo '30m' || echo '31m')"
 
     ## Build our custom PS1
     PS1="☕"                            # EMOJI
@@ -27,11 +17,13 @@ function generatePS1() {
     PS1+="\u"                          # USER
     PS1+="\[\033[1;30m\]"              # Set AT SIGN color to black
     PS1+="@"                           # AT SIGN
-    PS1+="\[\033[1;${HOST_COLOR}\]"    # Set HOST color dynamically
+    PS1+="\[\033[1;$(hostColor)\]"     # Set HOST color dynamically
     PS1+="\h"                          # HOST
+    PS1+="\[\033[0;36m\]"              # Set DOCKER INDICATOR color to purple
     PS1+=" "                           # <space>
+    PS1+="$(dockerIndicator)"          # DOCKER INDICATOR
     PS1+="\[\033[0;35m\]"              # Set WORKDING DIRECTORY color to purple
-    PS1+="${WORKING_DIRECTORY}"        # WORKING DIRECTORY
+    PS1+="$(workingDirectory)"         # WORKING DIRECTORY
     PS1+="\n"                          # <new line>
     PS1+="\[\033[0;36m\]"              # Set TIMESTAMP color to teal
     PS1+="\D{%b %d • %I:%M %p}"        # TIMESTAMP
@@ -42,4 +34,22 @@ function generatePS1() {
     PS1+="$"                           # PROMPT
     PS1+="\[\033[00m\]"                # Set USER TEXT color to white
     PS1+=" "                           # <space>
+}
+
+function hostColor() {
+    [[ -n "${SSH_CLIENT}" ]] && echo '31m' || echo '34m'
+}
+
+function workingDirectory() {
+    if [[ ${PWD} = ${HOME}/workspace/* ]] && git rev-parse --is-inside-work-tree &>/dev/null; then
+        echo "${PWD#${HOME}/workspace/*/}"
+    else
+        echo "$(dirs)"
+    fi
+}
+
+function dockerIndicator() {
+    if [[ -f "docker-composer.yml" ]] || [[ -f "docker-compose.yaml" ]]; then
+        [[ -n "$(docker-compose ps --quiet --filter 'status=running')" ]] && echo "⬢ " || echo "⬡ "
+    fi
 }
