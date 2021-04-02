@@ -16,7 +16,7 @@ function generatePS1() {
     PS1+="${FG_GREEN}\u"                      # USER
     PS1+="${FG_BLACK}@"                       # AT SIGN
     PS1+="$(hostColor)\h"                     # HOST
-    PS1+="${END_FORMAT} "                     # <space>
+    PS1+="${RESET_FORMAT} "                   # <space>
     PS1+="${FG_CYAN}$(dockerIndicator)"       # DOCKER INDICATOR
     PS1+="${FG_MAGENTA}$(workingDirectory)"   # WORKING DIRECTORY
     PS1+="\n"                                 # <new line>
@@ -24,7 +24,7 @@ function generatePS1() {
     PS1+=" "                                  # <space>
     PS1+="${FG_YELLOW}\$(__git_ps1 '(%s) ')"  # GIT PS1
     PS1+="${BOLD}${PROMPT_COLOR}$"            # PROMPT
-    PS1+="${END_FORMAT} "                     # <space>
+    PS1+="${RESET_FORMAT} "                   # <space>
 }
 
 function hostColor() {

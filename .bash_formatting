@@ -17,8 +17,7 @@ FG_CYAN="$(tput setaf 6)"
 FG_WHITE="$(tput setaf 7)"
 
 BOLD="$(tput bold)"
+DIM="$(tput dim)"
 UNDERLINE="$(tput smul)"
 
-DIM="$(tput dim)"
-
-END_FORMAT="$(tput sgr0)"
+RESET_FORMAT="$(tput sgr0)"
