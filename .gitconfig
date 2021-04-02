@@ -14,9 +14,9 @@
     push = HEAD
 [alias]
     fast-forward = merge --ff-only
-    unstage = restore --staged
     lg = log --graph --pretty=format:'%C(red)%h%Creset %C(dim white)-%Creset %s %C(dim white)•%Creset %C(bold blue)%an%Creset %C(green)[%cr] %C(yellow)%d%Creset'
     tags = log --no-walk --tags --pretty=format:'%C(red)%h%Creset %C(dim white)-%Creset %s %C(dim white)•%Creset %C(bold blue)%an%Creset %C(green)[%cr] %C(yellow)%d%Creset'
+    unstage = restore --staged
 [sendemail]
     smtpencryption = tls
     smtpServer = smtp.gmail.com
