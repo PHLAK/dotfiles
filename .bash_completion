@@ -4,13 +4,3 @@ COMPOSER_COMPLETION="${COMPOSER_HOME}/vendor/stecman/composer-bash-completion-pl
 
 # Add GitHub CLI bash completion
 [[ $(command -v gh) ]] && eval "$(gh completion -s bash)"
-
-# Travis bash completion
-[[ -f "${HOME}/.travis/travis.sh" ]] && source "${HOME}/.travis/travis.sh"
-
-# Heroku bash completion
-HEROKU_COMPLETION="${HOME}/.heroku/plugins/heroku-bash-completion/heroku-completion.bash"
-[[ -f "${HEROKU_COMPLETION}" ]] && source "${HEROKU_COMPLETION}"
-
-# Kubectl bash completion
-[[ $(command -v kubectl) ]] && source <(kubectl completion bash)

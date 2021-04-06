@@ -1,0 +1,16 @@
+# Don't allow duplicate lines in the history
+HISTCONTROL=ignoreboth
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=10000
+
+# Update the values of LINES and COLUMNS after each command if windows size changes
+shopt -s checkwinsize
+
+# Append to the history file, don't overwrite it
+shopt -s histappend
+
+# Enable globstar
+shopt -s globstar
+

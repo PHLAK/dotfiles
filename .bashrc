@@ -1,45 +1,25 @@
-## If not running interactively, don't do anything
-[[ -z "$PS1" ]] && return
+# If not running interactively, don't do anything
+[[ -z "${PS1}" ]] && return
 
-## Don't allow duplicate lines in the history
-HISTCONTROL=ignoreboth
+# Set bash options
+source "${HOME}/.bash_options"
 
-## Append to the history file, don't overwrite it
-shopt -s histappend
+# Load custom PS1
+[[ -n "${ASCIINEMA_REC}" ]] && source "${HOME}/.asciinema_ps1" ||  source "${HOME}/.bash_ps1"
 
-## for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=10000
+# Share bash command history with all open terminals
+PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"
 
-## Share bash command history with all open terminals
-PROMPT_COMMAND="history -a; history -n"
+# Include custom path definitions
+source "${HOME}/.bash_path"
 
-## Update the values of LINES and COLUMNS after each command if windows size changes
-shopt -s checkwinsize
+# Include custom bash functions
+source "${HOME}/.bash_functions"
 
-## Enable globstar
-shopt -s globstar
+# Include custom bash aliases
+source "${HOME}/.bash_aliases"
 
-## Make less more friendly for non-text input files, see lesspipe(1)
-[[ -x "/usr/bin/lesspipe" ]] && eval "$(SHELL=/bin/sh lesspipe)"
-
-## Include custom PS1
-if [[ ${ASCIINEMA_REC} ]]; then
-    [[ -f "${HOME}/.asciinema_ps1" ]] && source "${HOME}/.asciinema_ps1"
-else
-    [[ -f "${HOME}/.bash_ps1" ]] && source "${HOME}/.bash_ps1"
-fi
-
-## Include custom path definitions
-[[ -f "${HOME}/.bash_path" ]] && source "${HOME}/.bash_path"
-
-## Include custom bash functions
-[[ -f "${HOME}/.bash_functions" ]] && source "${HOME}/.bash_functions"
-
-## Include custom bash aliases
-[[ -f "${HOME}/.bash_aliases" ]] && source "${HOME}/.bash_aliases"
-
-## Include programmable completion features
+# Include programmable completion features
 if ! shopt -oq posix; then
     if [[ -f "/usr/share/bash-completion/bash_completion" ]]; then
         source "/usr/share/bash-completion/bash_completion"
@@ -49,7 +29,7 @@ if ! shopt -oq posix; then
 fi
 
 # Include custom bash completion
-[[ -f "${HOME}/.bash_completion" ]] && source "${HOME}/.bash_completion"
+source "${HOME}/.bash_completion"
 
-## Include local bash config
-[[ -f "${HOME}/.bash_local" ]] && source "${HOME}/.bash_local"
+# Include local bash config if present
+[[ -f "${HOME}/.bash_local" ]] && source "${HOME}/.bash_local" || true

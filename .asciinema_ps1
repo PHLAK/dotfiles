@@ -1,8 +1,8 @@
-## Build our custom PS1
-PS1="\[\033[01;30m\]"     # Set DOLLAR SIGN color to black
-PS1=${PS1}"\$"            # DOLLAR SIGN
-PS1=${PS1}"\[\033[00m\]"  # Set USER TEXT color to white
-PS1=${PS1}" "             # <space>
+source ${HOME}/.bash_formatting
 
-# Set the environment variable
-export PS1=${PS1}
+# Set function to generate PS1
+export PROMPT_COMMAND=generatePS1
+
+function generatePS1() {
+    PS1="${BOLD}${FG_BLACK}\$${RESET_FORMAT} "
+}
