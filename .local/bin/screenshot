@@ -14,7 +14,7 @@ function screenshotFullScreen() {
 }
 
 function screenshotWindow() {
-    gnome-screenshot --clipboard --file "${FILE_LOCATION}" --window --border-effect shadow
+    gnome-screenshot --clipboard --file "${FILE_LOCATION}" --window
 }
 
 function screenshotArea() {
