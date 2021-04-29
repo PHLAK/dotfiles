@@ -24,3 +24,5 @@
     smtpUser = Chris@ChrisKankiewicz.com
 [commit]
 	gpgsign = true
+[init]
+	defaultBranch = master
