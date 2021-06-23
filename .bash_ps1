@@ -41,6 +41,6 @@ function workingDirectory() {
 
 function dockerIndicator() {
     if [[ -f "docker-composer.yml" ]] || [[ -f "docker-compose.yaml" ]]; then
-        [[ -n "$(docker-compose ps --quiet --filter 'status=running')" ]] && echo "⬢ " || echo "⬡ "
+        [[ -n "$(docker-compose ps --services --filter 'status=running')" ]] && echo "⬢ " || echo "⬡ "
     fi
 }
