@@ -1,7 +1,7 @@
 [user]
     name = Chris Kankiewicz
     email = Chris@ChrisKankiewicz.com
-    signingkey = 09CEB5EB
+    signingKey = 643F3710CEDE27E460E66B18474E915709CEB5EB
 [color]
     ui = auto
 [core]
@@ -23,6 +23,6 @@
     smtpServerPort = 587
     smtpUser = Chris@ChrisKankiewicz.com
 [commit]
-	gpgsign = true
+	gpgSign = true
 [init]
 	defaultBranch = master
