@@ -1,8 +1,0 @@
-shadow_other_users=1
-hide_kernel_threads=1
-hide_userland_threads=1
-highlight_base_name=1
-highlight_megabytes=1
-header_margin=1
-left_meters=AllCPUs2 Memory Swap
-right_meters=Hostname Tasks LoadAverage Uptime
