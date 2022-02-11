@@ -16,7 +16,7 @@ if [[ ! $(dotfiles checkout 2>/dev/null) ]]; then
     echo ">>> NOTICE: Backing up existing files"
 
     BACKUP_DIR="${HOME}/.dotfiles-backup/$(date +'%F_%T')"
-    FILES="$(dotfiles checkout 2>&1 | egrep '^\s+(.*)$'  | awk {'print $1'})"
+    FILES="$(dotfiles checkout 2>&1 | egrep '^\s+(.*)$' | awk {'print $1'})"
     
     for FILE in ${FILES}; do
         mkdir --parents "$(dirname ${BACKUP_DIR}/${FILE})" && mv "${HOME}/${FILE}" "$_"
@@ -27,6 +27,7 @@ fi
 
 dotfiles config status.showUntrackedFiles no
 dotfiles remote set-url origin git@github.com:PHLAK/dotfiles.git
+dotfiles update-index --assume-unchanged init.sh README.md
 
 echo ">>> Dotfiles sucessfully installed!"
 
