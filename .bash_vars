@@ -1,3 +1,2 @@
 export COMPOSER_HOME="${HOME}/.config/composer"
-
-export EDITOR="nano"
+export NPM_PACKAGES="${HOME}/.config/npm"
