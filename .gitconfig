@@ -17,6 +17,7 @@
     lg = log --graph --pretty=format:'%C(red)%h%Creset %C(dim white)-%Creset %s %C(dim white)•%Creset %C(bold blue)%an%Creset %C(green)[%cr]%Creset%C(yellow)%d%Creset'
     tags = log --no-walk --tags --pretty=format:'%C(red)%h%Creset %C(dim white)-%Creset %s %C(dim white)•%Creset %C(bold blue)%an%Creset %C(green)[%cr]%Creset%C(yellow)%d%Creset'
     unstage = restore --staged
+    wip = !git add . && git commit --no-verify --message "WIP"
 [sendemail]
     smtpencryption = tls
     smtpServer = smtp.gmail.com
