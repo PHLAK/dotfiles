@@ -1,6 +1,3 @@
-# Add GitHub CLI bash completion
-[[ $(command -v gh) ]] && eval "$(gh completion -s bash)"
-
 # Load local bash completion scripts
 for file in ${HOME}/.bash_completion.d/*; do
     source ${file}
