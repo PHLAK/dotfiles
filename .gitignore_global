@@ -3,6 +3,8 @@
 
 .buildpath
 .coverage
+.fleet
+.obsidian
 .phpunit.result.cache
 .project
 .settings

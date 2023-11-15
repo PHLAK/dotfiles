@@ -4,10 +4,14 @@
     signingKey = 643F3710CEDE27E460E66B18474E915709CEB5EB
 [color]
     ui = auto
+[commit]
+    gpgSign = true
 [core]
     autocrlf = input
     editor = nano
     excludesfile = ~/.gitignore_global
+[init]
+    defaultBranch = master
 [push]
     default = simple
 [remote "origin"]
@@ -23,7 +27,3 @@
     smtpServer = smtp.gmail.com
     smtpServerPort = 587
     smtpUser = Chris@ChrisKankiewicz.com
-[commit]
-	gpgSign = true
-[init]
-	defaultBranch = master

@@ -1,4 +1,4 @@
-# Don't allow duplicate lines in the history
+# Don't allow duplicate lines in the history and ignore when preceeded with space
 HISTCONTROL=ignoreboth
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)

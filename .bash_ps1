@@ -11,8 +11,8 @@ function generatePS1() {
     # Set prompt color based on previous command exit code (NOTE: Must be first)
     local PROMPT_COLOR="$([[ ${PIPESTATUS[-1]} == 0 ]] && echo ${FG_BLACK} || echo ${FG_RED})"
 
-    PS1="☕"                                  # EMOJI
-    PS1+=" ${BOLD}"                          # <space>
+    PS1="${FG_BLUE}"                        # EMOJI
+    PS1+="${RESET_FORMAT}${BOLD} "           # <space>
     PS1+="${FG_GREEN}\u"                     # USER
     PS1+="${FG_BLACK}@"                      # AT SIGN
     PS1+="$(hostColor)\h"                    # HOST
