@@ -1,6 +1,7 @@
 # System Command Aliases
 
 alias cp='cp --interactive --recursive --verbose'
+alias ip='ip --color=auto'
 alias ls='ls --color=auto'
 alias mkdir='mkdir --parents --verbose'
 alias mv='mv --interactive --verbose'
