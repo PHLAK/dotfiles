@@ -31,5 +31,8 @@ fi
 # Include custom bash completion
 source "${HOME}/.bash_completion"
 
+# Include bash secrets if present
+[[ -f "${HOME}/.bash_secrets" ]] && source "${HOME}/.bash_secrets"
+
 # Include local bash config if present
-[[ -f "${HOME}/.bash_local" ]] && source "${HOME}/.bash_local" || true
+[[ -f "${HOME}/.bash_local" ]] && source "${HOME}/.bash_local"

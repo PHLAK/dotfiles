@@ -2,3 +2,7 @@ export EDITOR="nano"
 
 export COMPOSER_HOME="${HOME}/.config/composer"
 export NPM_PACKAGES="${HOME}/.config/npm"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH

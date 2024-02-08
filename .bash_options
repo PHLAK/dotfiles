@@ -14,3 +14,5 @@ shopt -s histappend
 # Enable globstar
 shopt -s globstar
 
+# Case-insensitive tab completion
+bind -s 'set completion-ignore-case on'
