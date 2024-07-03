@@ -9,8 +9,6 @@ alias rm='trash-put'
 
 alias diff='colordiff'
 
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
 alias grep='grep --color=auto'
 
 # Custom Aliases
@@ -20,6 +18,7 @@ alias clip='xclip -selection clipboard'
 alias dps='docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Networks}}\t{{.Ports}}\t{{.Command}}"'
 alias dotfiles='git --git-dir=${HOME}/.dotfiles --work-tree=${HOME}'
 alias profile='/usr/bin/time --verbose'
+alias rebuild='paru --sync --rebuild'
 alias speedtest='docker run -it --rm --net host phlak/speedtest'
 alias transfer='rsync -rzvvhP'
 alias weather='curl -s wttr.in | sed -n "1,7p"; echo'

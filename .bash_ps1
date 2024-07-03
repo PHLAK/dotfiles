@@ -19,10 +19,11 @@ function generatePS1() {
     PS1+="${RESET_FORMAT} "                  # <space>
     PS1+="${FG_CYAN}$(dockerIndicator)"      # DOCKER INDICATOR
     PS1+="${FG_MAGENTA}$(workingDirectory)"  # WORKING DIRECTORY
+    PS1+=" "                                 # <space>
+    PS1+="${FG_YELLOW}$(__git_ps1 '(%s) ')"  # GIT PS1
     PS1+="\n"                                # <new line>
     PS1+="${FG_CYAN}\D{%b %d • %I:%M %p}"    # TIMESTAMP
     PS1+=" "                                 # <space>
-    PS1+="${FG_YELLOW}$(__git_ps1 '(%s) ')"  # GIT PS1
     PS1+="${BOLD}${PROMPT_COLOR}\$"          # PROMPT
     PS1+="${RESET_FORMAT} "                  # <space>
 }
