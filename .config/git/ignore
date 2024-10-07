@@ -5,10 +5,12 @@
 .coverage
 .fleet
 .obsidian
+.phpactor.json
 .phpunit.result.cache
 .project
 .settings
 .vscode
+.zed
 *.sublime-project
 *.sublime-workspace
 

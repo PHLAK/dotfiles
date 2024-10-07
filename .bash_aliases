@@ -15,7 +15,7 @@ alias grep='grep --color=auto'
 
 alias artisan='php artisan'
 alias clip='xclip -selection clipboard'
-alias dps='docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Networks}}\t{{.Ports}}\t{{.Command}}"'
+alias dps='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.Ports}}"'
 alias dotfiles='git --git-dir=${HOME}/.dotfiles --work-tree=${HOME}'
 alias profile='/usr/bin/time --verbose'
 alias rebuild='paru --sync --rebuild'
