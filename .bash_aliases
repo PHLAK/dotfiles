@@ -15,6 +15,7 @@ alias grep='grep --color=auto'
 
 alias artisan='php artisan'
 alias clip='xclip -selection clipboard'
+alias dcr='docker compose run --rm'
 alias dps='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.Ports}}"'
 alias dotfiles='git --git-dir=${HOME}/.dotfiles --work-tree=${HOME}'
 alias profile='/usr/bin/time --verbose'
