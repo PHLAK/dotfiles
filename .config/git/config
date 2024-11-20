@@ -1,32 +1,33 @@
 [user]
-    name = Chris Kankiewicz
-    email = Chris@ChrisKankiewicz.com
-    signingKey = 643F3710CEDE27E460E66B18474E915709CEB5EB
+	name = Chris Kankiewicz
+	email = Chris@ChrisKankiewicz.com
+	signingKey = 643F3710CEDE27E460E66B18474E915709CEB5EB
 [color]
-    ui = auto
+	ui = auto
 [commit]
-    gpgSign = true
+	gpgSign = true
 [core]
-    autocrlf = input
-    editor = nano
+	autocrlf = input
+	editor = nano
 [init]
-    defaultBranch = master
+	defaultBranch = master
 [push]
-    default = simple
+	default = simple
 [remote "origin"]
-    push = HEAD
+	push = HEAD
 [alias]
-    fast-forward = merge --ff-only
-    lg = log --graph --pretty=format:'%C(red)%h%Creset %C(dim white)-%Creset %s %C(dim white)•%Creset %C(bold blue)%an%Creset %C(green)[%cr]%Creset%C(yellow)%d%Creset'
-    tags = log --no-walk --tags --pretty=format:'%C(red)%h%Creset %C(dim white)-%Creset %s %C(dim white)•%Creset %C(bold blue)%an%Creset %C(green)[%cr]%Creset%C(yellow)%d%Creset'
-    unstage = restore --staged
-    wip = !git add . && git commit --no-verify --message "WIP"
+	fast-forward = merge --ff-only
+	lg = log --graph --pretty=format:'%C(red)%h%Creset %C(dim white)-%Creset %s %C(dim white)•%Creset %C(bold blue)%an%Creset %C(green)[%cr]%Creset%C(yellow)%d%Creset'
+	tags = log --no-walk --tags --pretty=format:'%C(red)%h%Creset %C(dim white)-%Creset %s %C(dim white)•%Creset %C(bold blue)%an%Creset %C(green)[%cr]%Creset%C(yellow)%d%Creset'
+	unstage = restore --staged
+	wip = !git add . && git commit --no-verify --message "WIP"
+	force-push = push --force-with-lease --force-if-includes
 [sendemail]
-    smtpencryption = tls
-    smtpServer = smtp.gmail.com
-    smtpServerPort = 587
-    smtpUser = Chris@ChrisKankiewicz.com
+	smtpencryption = tls
+	smtpServer = smtp.gmail.com
+	smtpServerPort = 587
+	smtpUser = Chris@ChrisKankiewicz.com
 [rerere]
-    enable = true
+	enable = true
 [column]
-    ui = auto
+	ui = auto
