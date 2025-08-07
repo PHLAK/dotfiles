@@ -29,6 +29,8 @@ dotfiles config status.showUntrackedFiles no
 dotfiles remote set-url origin git@github.com:PHLAK/dotfiles.git
 dotfiles update-index --assume-unchanged init.sh README.md
 
+rm init.sh README.md
+
 echo ">>> Dotfiles sucessfully installed!"
 
 source ${HOME}/.bash_profile
