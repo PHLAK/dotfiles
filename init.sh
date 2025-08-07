@@ -31,4 +31,4 @@ dotfiles update-index --assume-unchanged init.sh README.md
 
 echo ">>> Dotfiles sucessfully installed!"
 
-source ${HOME}/.profile
+source ${HOME}/.bash_profile
