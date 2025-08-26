@@ -9,7 +9,10 @@ export PROMPT_COMMAND=generatePS1
 
 function generatePS1() {
     # Set prompt color based on previous command exit code (NOTE: Must be first)
-    local PROMPT_COLOR="$([[ ${PIPESTATUS[-1]} == 0 ]] && echo ${FG_BLACK} || echo ${FG_RED})"
+    case ${PIPESTATUS[-1]} in
+        0 | 130)  local PROMPT_COLOR=${FG_BLACK};;
+        *)        local PROMPT_COLOR=${FG_RED};;
+    esac
 
     PS1="${FG_BLUE}"                        # EMOJI
     PS1+="${RESET_FORMAT}${BOLD} "           # <space>
@@ -24,7 +27,7 @@ function generatePS1() {
     PS1+="\n"                                # <new line>
     PS1+="${FG_CYAN}\D{%b %d • %I:%M %p}"    # TIMESTAMP
     PS1+=" "                                 # <space>
-    PS1+="${BOLD}${PROMPT_COLOR}\$"          # PROMPT
+    PS1+="${BOLD}${PROMPT_COLOR}❭"           # PROMPT
     PS1+="${RESET_FORMAT} "                  # <space>
 }
 
