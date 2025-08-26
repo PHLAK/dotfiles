@@ -4,5 +4,3 @@ export WGETRC="${HOME}/.config/wgetrc"
 
 export COMPOSER_HOME="${HOME}/.config/composer"
 export NPM_PACKAGES="${HOME}/.config/npm"
-
-export PHP_CS_FIXER_IGNORE_ENV=true
