@@ -1,9 +1,6 @@
 # Add user bin folder to the path
 PATH="${HOME}/.local/bin:${PATH}"
 
-# Add Ruby gems folder to the path
-PATH="${HOME}/.gem/bin/:${PATH}"
-
 # Add local and global NPM bin folders to the path
 PATH="node_modules/bin:${NPM_PACKAGES}/bin:${PATH}"
 
