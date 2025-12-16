@@ -1,4 +1,12 @@
+# ----------------------------------------
+# Dotfiles helper
+# ----------------------------------------
+
+alias dotfiles='git --git-dir=${HOME}/.dotfiles --work-tree=${HOME}'
+
+# ----------------------------------------
 # System Command Aliases
+# ----------------------------------------
 
 alias cp='cp --interactive --recursive --verbose'
 alias ip='ip --color=auto'
@@ -11,16 +19,16 @@ alias diff='colordiff'
 
 alias grep='grep --color=auto'
 
+# ----------------------------------------
 # Custom Aliases
+# ----------------------------------------
 
 alias artisan='php artisan'
 alias clip='xclip -selection clipboard'
 alias dcr='docker compose run --rm'
 alias dps='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.Ports}}"'
-alias dotfiles='git --git-dir=${HOME}/.dotfiles --work-tree=${HOME}'
 alias profile='/usr/bin/time --verbose'
 alias rebuild='paru --sync --rebuild'
-alias speedtest='docker run -it --rm --net host phlak/speedtest'
 alias transfer='rsync -rzvvhP'
 alias weather='curl -s wttr.in | sed -n "1,7p"; echo'
 

@@ -1,4 +1,0 @@
-# Load local bash completion scripts
-for file in ${HOME}/.bash_completion.d/*; do
-    source ${file}
-done
