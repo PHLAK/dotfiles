@@ -14,7 +14,13 @@ function generatePS1() {
         *)        local PROMPT_COLOR=${FG_RED};;
     esac
 
-    PS1="${FG_BLUE}"                        # EMOJI
+    case $(lsb_release --id --short) in
+        Arch)   local DISTRO_LOGO="${FG_BLUE}";;
+        Debian) local DISTRO_LOGO="${FG_RED}";;
+        *)      local DISTRO_LOGO="";;
+    esac
+
+    PS1="${DISTRO_LOGO}"                     # DISTRO LOGO
     PS1+="${RESET_FORMAT}${BOLD} "           # <space>
     PS1+="${FG_GREEN}\u"                     # USER
     PS1+="${FG_BLACK} @ "                      # AT SIGN
