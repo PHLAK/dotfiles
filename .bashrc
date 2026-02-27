@@ -5,6 +5,7 @@
 source "${HOME}/.bash_options"
 source "${HOME}/.bash_path"
 source "${HOME}/.bash_aliases"
+source "${HOME}/.bash_functions"
 [[ -f "${HOME}/.bash_local" ]] && source "${HOME}/.bash_local"
 [[ -n "${ASCIINEMA_REC}" ]] && source "${HOME}/.asciinema_ps1" ||  source "${HOME}/.bash_ps1"
 
