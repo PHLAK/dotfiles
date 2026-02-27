@@ -16,8 +16,8 @@ alias mv='mv --interactive --verbose'
 alias rm='trash-put'
 
 alias diff='colordiff'
-
 alias grep='grep --color=auto'
+alias hostname='hostnamectl hostname'
 
 # ----------------------------------------
 # Custom Aliases
