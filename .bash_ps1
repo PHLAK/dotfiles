@@ -43,7 +43,7 @@ function generatePS1() {
 }
 
 function user() {
-    [[ "\u" == "root" ]] && echo -n "${BOLD}${FG_RED}\u" || echo -n "${BOLD}${FG_GREEN}\u"
+    [[ "${USER}" == "root" ]] && echo -n "${BOLD}${FG_RED}\u" || echo -n "${BOLD}${FG_GREEN}\u"
 
     echo ${RESET_FORMAT}
 }
