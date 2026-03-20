@@ -10,8 +10,8 @@ export PROMPT_COMMAND=generatePS1
 function generatePS1() {
     # Set prompt color based on previous command exit code (NOTE: Must be first)
     case ${PIPESTATUS[-1]} in
-        0 | 130)  local PROMPT_COLOR=${FG_BLACK};;
-        *)        local PROMPT_COLOR=${FG_RED};;
+        0 | 130) local PROMPT_COLOR=${FG_BLACK};;
+        *)       local PROMPT_COLOR=${FG_RED};;
     esac
 
     case $(lsb_release --id --short) in
@@ -20,37 +20,68 @@ function generatePS1() {
         *)      local DISTRO_LOGO="";;
     esac
 
-    PS1="${FG_BLUE}${DISTRO_LOGO}"           # DISTRO LOGO
-    PS1+="${RESET_FORMAT}${BOLD} "           # <space>
-    PS1+="${FG_GREEN}\u"                     # USER
-    PS1+="${FG_BLACK} @ "                    # AT SIGN
-    PS1+="$(hostColor)\h"                    # HOST
-    PS1+="${RESET_FORMAT} "                  # <space>
-    PS1+="${FG_CYAN}$(dockerIndicator)"      # DOCKER INDICATOR
-    PS1+="${FG_MAGENTA}$(workingDirectory)"  # WORKING DIRECTORY
-    PS1+=" "                                 # <space>
-    PS1+="${FG_YELLOW}$(__git_ps1 '(%s) ')"  # GIT PS1
-    PS1+="\n"                                # <new line>
-    PS1+="${FG_CYAN}\D{%b %d • %I:%M %p}"    # TIMESTAMP
-    PS1+=" "                                 # <space>
-    PS1+="${BOLD}${PROMPT_COLOR}❭"           # PROMPT
-    PS1+="${RESET_FORMAT} "                  # <space>
+    local GIT_STATUS="${FG_YELLOW}$(__git_ps1 '(%s)')"
+
+    PS1="${FG_BLUE}${DISTRO_LOGO}"      # DISTRO LOGO
+    PS1+="${RESET_FORMAT} "             # <space>
+    PS1+="$(user)"                      # USER
+    PS1+="${RESET_FORMAT} "             # <space>
+    PS1+="${FG_BLACK}@"                 # AT SIGN
+    PS1+="${RESET_FORMAT} "             # <space>
+    PS1+="$(host)"                      # HOST
+    PS1+="${RESET_FORMAT} "             # <space>
+    PS1+="$(dockerIndicator)"           # DOCKER INDICATOR
+    PS1+="${RESET_FORMAT} "             # <space>
+    PS1+="$(workingDirectory)"          # WORKING DIRECTORY
+    PS1+="${RESET_FORMAT} "             # <space>
+    PS1+="${GIT_STATUS}"                # GIT PS1
+    PS1+="${RESET_FORMAT}\n"            # <new line>
+    PS1+="$(timestamp)"                 # TIMESTAMP
+    PS1+="${RESET_FORMAT} "             # <space>
+    PS1+="${BOLD}${PROMPT_COLOR}❭"      # PROMPT
+    PS1+="${RESET_FORMAT} "             # <space>
 }
 
-function hostColor() {
-    [[ -n "${SSH_CLIENT}" ]] && echo ${FG_RED} || echo ${FG_BLUE}
+function user() {
+    [[ "\u" == "root" ]] && echo -n "${BOLD}${FG_RED}\u" || echo -n "${BOLD}${FG_GREEN}\u"
+
+    echo ${RESET_FORMAT}
+}
+
+function host() {
+    [[ -n "${SSH_CLIENT}" ]] && echo -n "${BOLD}${FG_RED}\h" || echo -n "${BOLD}${FG_BLUE}\h"
+
+    echo ${RESET_FORMAT}
+}
+
+function dockerIndicator() {
+    local DOCKER_SOCKET="/var/run/docker.sock"
+
+    if [[ -f "docker-composer.yml" ]] || [[ -f "docker-compose.yaml" ]]; then
+        if [[ -n "$(docker compose ps --services --filter 'status=running')" ]]; then
+            echo -n "${FG_CYAN}⬢"
+        elif [[ -r "${DOCKER_SOCKET}" ]] && [[ -n "$(docker --host unix://${DOCKER_SOCKET} compose ps --services --filter 'status=running')" ]]; then
+            echo -n "${FG_RED}⬢"
+        else
+            echo -n "${FG_CYAN}⬡"
+        fi
+
+        echo "${RESET_FORMAT}"
+    fi
 }
 
 function workingDirectory() {
     if [[ ${PWD} = ${HOME}/workspace/* ]] && git rev-parse --is-inside-work-tree &>/dev/null; then
-        echo "${PWD#${HOME}/workspace/*/}"
+        echo -n "${FG_MAGENTA}${PWD#${HOME}/workspace/*/}"
     else
-        echo "$(dirs)"
+        echo -n "${FG_MAGENTA}$(dirs)"
     fi
+
+    echo "${RESET_FORMAT}"
 }
 
-function dockerIndicator() {
-    if [[ -f "docker-composer.yml" ]] || [[ -f "docker-compose.yaml" ]]; then
-        [[ -n "$(docker compose ps --services --filter 'status=running')" ]] && echo "⬢ " || echo "⬡ "
-    fi
+function timestamp() {
+    echo -n "${FG_CYAN}\D{%b %d}"
+    echo -n " ${FG_BLACK}•${RESET_FORMAT} "
+    echo "${FG_CYAN}\D{%I:%M %p}"
 }
