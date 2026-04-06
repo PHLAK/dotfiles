@@ -1,6 +1,14 @@
 source ${HOME}/.bash_formatting
 source /usr/share/git/git-prompt.sh
 
+DISTRO="$(lsb_release --id --short)"
+
+if [[ "${DISTRO}" == 'Arch' ]]; then
+    source /usr/share/git/git-prompt.sh
+elif [[ "${DISTRO}" == "Debian" ]]; then
+    source /etc/bash_completion.d/git-prompt
+fi
+
 # Show git dirty state (*/+) in PS1
 export GIT_PS1_SHOWDIRTYSTATE=1
 
@@ -14,7 +22,7 @@ function generatePS1() {
         *)       local PROMPT_COLOR=${FG_RED};;
     esac
 
-    case $(lsb_release --id --short) in
+    case ${DISTRO} in
         Arch)   local DISTRO_LOGO="";;
         Debian) local DISTRO_LOGO="";;
         *)      local DISTRO_LOGO="";;

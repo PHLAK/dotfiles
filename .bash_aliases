@@ -8,6 +8,8 @@ alias dotfiles='git --git-dir=${HOME}/.dotfiles --work-tree=${HOME}'
 # System Command Aliases
 # ----------------------------------------
 
+alias sudo='sudo '
+
 alias cp='cp --interactive --recursive --verbose'
 alias ip='ip --color=auto'
 alias ls='ls --color=auto'
