@@ -1,6 +1,6 @@
 [user]
 	name = Chris Kankiewicz
-	email = Chris@ChrisKankiewicz.com
+	email = Chris@Kankiewicz.com
 	signingKey = 643F3710CEDE27E460E66B18474E915709CEB5EB
 [color]
 	ui = auto
@@ -22,11 +22,6 @@
 	unstage = restore --staged
 	wip = !git add . && git commit --no-verify --message "WIP"
 	force-push = push --force-with-lease --force-if-includes
-[sendemail]
-	smtpencryption = tls
-	smtpServer = smtp.gmail.com
-	smtpServerPort = 587
-	smtpUser = Chris@ChrisKankiewicz.com
 [rerere]
 	enable = true
 [column]
