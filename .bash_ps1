@@ -1,5 +1,4 @@
 source ${HOME}/.bash_formatting
-source /usr/share/git/git-prompt.sh
 
 DISTRO="$(lsb_release --id --short)"
 
@@ -89,7 +88,5 @@ function workingDirectory() {
 }
 
 function timestamp() {
-    echo -n "${FG_CYAN}\D{%b %d}"
-    echo -n " ${FG_BLACK}•${RESET_FORMAT} "
-    echo "${FG_CYAN}\D{%I:%M %p}"
+    echo "${FG_CYAN}\D{%b %d} ${FG_BLACK}•${RESET_FORMAT} ${FG_CYAN}\D{%I:%M %p}"
 }
