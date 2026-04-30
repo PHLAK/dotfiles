@@ -22,7 +22,5 @@ dotfiles checkout
 
 dotfiles config status.showUntrackedFiles no
 
-dotfiles remote set-url origin git@github.com:PHLAK/dotfiles.git
-
 source ${HOME}/.profile
 ```
